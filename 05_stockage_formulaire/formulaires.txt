@@ -1,0 +1,2 @@
+nom : Brun ; nom_jeune_fille : Brun ; prenom : Gabriel ; numero : 259 ; type_voie : rue ; cp : 59230 ; ville : Raismes ; 
+nom : Brun ; nom_jeune_fille : Brun ; prenom : Gabriel ; numero : 259 ; type_voie : rue ; cp : 59230 ; ville : Raismes ; 

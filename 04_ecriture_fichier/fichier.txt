@@ -1,0 +1,4 @@
+Coucou les amis
+Comment ça va ?
+Cette phrase est utile pour engager une discusion.
+C'est un peu comme le doctype !

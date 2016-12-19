@@ -1,7 +1,11 @@
 <?php 
     include('./dog.class.php');
-    include('./cat.class.php');
+    //include('./cat.class.php');
+    include('./animal.class.php'); // class générique
+    include('./cat2.class.php'); // hérite de la class Animal
     include('./rabbit.class.php');
+    include('./tiger.class.php');
+    include('./chaton.class.php');
     class Animalerie{
         var $animaux = [];
         function __construct(){
@@ -11,8 +15,14 @@
                 case "Dog" :
                     $animal = new Dog($nom);
                     break;
-                case "Cat" :
+/*                case "Cat" :
                     $animal = new Cat($nom);         
+                    break;*/
+                case "Cat" :
+                    $animal = new Cat2($nom);         
+                    break;
+                case "Tiger" :
+                    $animal = new Tiger($nom);         
                     break;
                 case "Rabbit" :
                     $animal = new Rabbit($nom);              
@@ -20,7 +30,7 @@
                 default:
                     echo "L'animal ".$type." est inconnu, impossible de le créer";
             }
-            if($type == "Dog" || $type == "Cat" || $type == "Rabbit"){
+            if($type == "Dog" || $type == "Cat" || $type == "Rabbit" || $type == "Tiger"){
                 array_push($this->animaux, $animal);                
             }
         }

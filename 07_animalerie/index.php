@@ -43,6 +43,15 @@
         //$perso->nom = "Jojo"; // erreur car privé
         $perso->setNom("Gabriel");
         echo $perso->getNom();
+
+
+        /*Final et abstract peuvent se mettre devant le mot class ou function (dans une class).
+
+        final empeche de surcharger la class enfant
+        abstract oblige à surcharger la class enfant
+
+        $this->getNom(); // appelle la fonction enfant si elle existe sinon la fonction parent
+        parent::getNom(); //appelle la fonction parent*/
       ?>
   </body>
   <script type="text/javascript"></script>

@@ -20,7 +20,7 @@
             return $item;
         }
         function printItemsList(){
-            echo "Contenu de la commande :<ul>";
+            echo "Votre commande contient ".count($this->itemsList)." items :<ul>";
             for($i = 0, $il = count($this->itemsList); $i < $il; $i++){
                 $item = $this->itemsList[$i];
                 $nom = $item->nom;            

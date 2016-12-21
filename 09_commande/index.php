@@ -28,7 +28,7 @@
 
       // création du catalogue Auchan et ajout d'articles dans le catalogue
       $auchan = new Catalog("Auchan"); 
-      $auchan->addItem("Pull", 80);
+      $auchan->addItem("Pull");
       $auchan->addItem("Veste", 5, "Une veste très moche de couleur caca d'oie");
       $auchan->addItem("Pantalon", 30, "Pantalon court de couleur vert");
       $auchan->addItem("Chemise", 20, "De belles rayures de zèbre");

@@ -25,7 +25,7 @@
       $panier = new Commande($auchan);
       $panier->printItemsList();
     ?>
-    <div><a href="index.php">Retour au catalog</a></div>
+    <div><a href="./">Retour au catalog</a></div>
   </body>
   <script type="text/javascript"></script>
 </html>

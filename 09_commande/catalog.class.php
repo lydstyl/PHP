@@ -6,7 +6,7 @@
         function __construct($nom){
             $this->nom = $nom;
         }
-        function addItem($nom, $prix = false, $description = false){
+        function addItem($nom, $prix = 9, $description = "coco"){
             $item = new Item($nom, $prix, $description);
             array_push($this->itemsList, $item);
         }
@@ -17,11 +17,8 @@
             echo "Articles du catalog $this->nom : <br/><ul>";
             for($i = 0, $il = count($this->itemsList); $i < $il; $i++){
                 $item = $this->itemsList[$i];
-                $nom = $item->nom;
-                $description = $item->description;
-                $prix = $item->prix;
-                echo "<li>Nom : $nom<br/> Description : $description<br/> Prix: $prix </ li>";
-                echo "<br/><a target='' href='?nom=$nom'>Ajouter à la commande</a>";
+                echo "<li>Nom : $item->nom<br/>Description : $item->description<br/>";
+                echo "Prix: $item->prix </ li><br/><a href='?nom=$item->nom'>Ajouter à la commande</a>";
             }
             echo "</ul>";
         }

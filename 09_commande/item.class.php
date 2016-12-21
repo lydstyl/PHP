@@ -1,6 +1,6 @@
 <?php
     class Item{
-        public $nom;
+        public $nom = "";
         public $prix = 0;
         public $description;
         function __construct($nom, $prix = 10, $description = False){

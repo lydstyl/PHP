@@ -1,9 +1,10 @@
 <?php
     include("./item.class.php");
     class Catalog{
+        public $nom = "";
         public $itemsList = [];
-        function __construct(){
-
+        function __construct($nom){
+            $this->nom = $nom;
         }
         function addItem($nom, $prix = false, $description = false){
             $item = new Item($nom, $prix, $description);
@@ -13,9 +14,16 @@
             return $this->itemsList;
         }
         function printItemsList(){
-            echo "</br>Liste des items du catalogue :<pre>";
-            print_r($this->itemsList);
-            echo "</pre></br>";
+            echo "Articles du catalog $this->nom : <br/><ul>";
+            for($i = 0, $il = count($this->itemsList); $i < $il; $i++){
+                $item = $this->itemsList[$i];
+                $nom = $item->nom;
+                $description = $item->description;
+                $prix = $item->prix;
+                echo "<li>Nom : $nom<br/> Description : $description<br/> Prix: $prix </ li>";
+                echo "<br/><a target='' href='?nom=$nom'>Ajouter à la commande</a>";
+            }
+            echo "</ul>";
         }
         function giveItemFromName($nom){
             for($i = 0, $il = count($this->itemsList); $i < $il; $i++){

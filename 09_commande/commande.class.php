@@ -2,60 +2,35 @@
     class Commande{
         public $itemsList = [];
         public $total = 0;
-        function __construct($objetItem = false){
-            if(!$objetItem){
-                $this->ajouterItemDansSession(); // on reprend les infos de session
-            }else{
-                $this->addItem($objetItem);
+        function __construct(&$catalog){
+            for($i = 0; $i < count($_SESSION['panier']); $i++){
+                $nomItem = $_SESSION['panier'][$i];
+                $item = $this->recupererInfosItem($catalog, $nomItem);
+                array_push($this->itemsList, $item);
             }
-        }
-        function ajouterItemDansSession(){
-            // 
-            //$_SESSION['panier']
-        }
-        function addItem($objetItem){
-            array_push($this->itemsList,$objetItem);
-            //print_r($objetItem->nom);
-            $nomItem = $objetItem->nom;
-            array_push($_SESSION['panier'], $nomItem);
-        }
-        function giveItemsList(){
-            return $this->itemsList;
-        }
-        function printItemsList(){
-            echo "</br>Liste des items de la commande :<pre>";
-            print_r($this->itemsList);
-            echo "</pre></br>";            
         }
         function actualiserTotal(){
-            $this->total = 0;
             for($i = 0, $il = count($this->itemsList); $i < $il; $i++){
-                $prixItem = $this->itemsList[$i]->prix;
-                $this->total += $prixItem;
+                $item = $this->itemsList[$i];
+                $this->total += $item->prix;
             }
         }
-        function giveTotal(){
-            $this->actualiserTotal();
-            return $this->total;
+        function recupererInfosItem($catalog, $nomItem){
+            $item = $catalog->giveItemFromName($nomItem);
+            return $item;
         }
-        function printTotal(){
-            $this->actualiserTotal();
-            echo "Total = ".$this->total." €";
-        }
-        function printCommande(){
-            echo "<h2>Votre commande vaut ".$this->giveTotal()." € et contient :</h2><ul>";
+        function printItemsList(){
+            echo "Contenu de la commande :<ul>";
             for($i = 0, $il = count($this->itemsList); $i < $il; $i++){
-                $nomItem = $this->itemsList[$i]->nom;
-                $prixItem = $this->itemsList[$i]->prix;
-                $descriptionItem = $this->itemsList[$i]->description;
-                echo "
-                    <li>
-                        Un $nomItem d'une valeur de 
-                        $prixItem €. Description : 
-                        $descriptionItem
-                    </li>";
+                $item = $this->itemsList[$i];
+                $nom = $item->nom;            
+                $prix = $item->prix;            
+                $description = $item->description;  
+                $num = $i + 1;        
+                echo "<li>Item $num --> $nom au prix de $prix €<br/>Description : $description</li>";    
             }
-            echo "</ul>";
+            $this->actualiserTotal();
+            echo "</ul>Total de la commande : $this->total €";
         }
     }
 ?>

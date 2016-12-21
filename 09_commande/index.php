@@ -4,38 +4,45 @@
     <meta charset="utf-8">
     <title>Exo PHP</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <!--link href="css/normalize.css" rel="stylesheet" type="text/css" /-->
-    <!--link href="css/grille.css" rel="stylesheet" type="text/css" /-->
-    <!--link href="css/style.css" rel="stylesheet" type="text/css" /-->
     <style>
-        
+        li{margin-bottom: 20px;}
+        #goPanier{margin-top : 50px;}
     </style>
-  <!--		<script type="text/javascript" src="js/jquery.js"></script>-->
   </head>
   <body>
-    <h1>Exo PHP</h1>
+    <h1><a href="http://localhost/PHP/09_commande">Catalog</a></h1>
     <?php
-      session_start();
-      $_SESSION['panier'] = [];
       include("./catalog.class.php");
       include("./commande.class.php");
-      // création du catalogue Auchan
-      $auchan = new Catalog(); 
+
+      function viderPaner(){
+        unset($_SESSION['panier']);
+        $_SESSION['panier'] = [];
+        echo "<div>Panier vidé !</div>";
+      }
+
+      session_start();
+      if(isset($_GET['viderPanier'])){
+        viderPaner(); // permet de vider le panier via le lien "Vider le paner"
+      }
+
+      // création du catalogue Auchan et ajout d'articles dans le catalogue
+      $auchan = new Catalog("Auchan"); 
       $auchan->addItem("Pull", 80);
-      $auchan->addItem("Veste", 5, "Une veste très mauche de couleur caca d'oie");
+      $auchan->addItem("Veste", 5, "Une veste très moche de couleur caca d'oie");
       $auchan->addItem("Pantalon", 30, "Pantalon court de couleur vert");
       $auchan->addItem("Chemise", 20, "De belles rayures de zèbre");
-      $auchan->printItemsList(); 
-      // ajout d'item dans le panier
-      $pantalon = $auchan->giveItemFromName("Pantalon");
-      $panier = new Commande($pantalon);
-      $chemise = $auchan->giveItemFromName("Chemise");
-      $panier->addItem($chemise);
-      //$panier->printCommande();
+      $auchan->printItemsList(); // affiche les items du catalogue avec leur lien "Ajouter à la commande"
 
+      if(isset($_GET['nom'])){
+        $item = $_GET['nom'];
+        array_push($_SESSION['panier'], $item); // permet d'ajouter les noms des items dans $_SESSION
+      }
+      echo "<br/>Contenu de \$_SESSION['panier'] :<br/>";
       print_r($_SESSION['panier']);
-
     ?>
+    <div id="goPanier"><a href="commande.php">Voir le panier</a></div>
+    <div><a href="?viderPanier=true">Vider le panier</a></div>
   </body>
   <script type="text/javascript"></script>
 </html>

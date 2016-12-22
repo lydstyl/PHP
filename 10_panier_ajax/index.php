@@ -46,41 +46,30 @@
     <div id="viderPanier">Vider le panier</div>
   </body>
   <script type="text/javascript">
-  //vider panier ici
+    function ajouterContenuPanier(){
+      $.ajax({
+        url : "commande.php",
+        success : function(panier){
+          $("#panierBox").html(panier); // -- on ajoute le contenu du panier 
+        }
+      });
+    }
+    // Gestion du clic sur Vider le panier
     $('#viderPanier').click(function(){
         $.ajax({
           url : "?viderPanier"
-          //data : {"nom" : nom} //data : {"nom": "chemise"},
         })
-
-      $.ajax({
-        url : "commande.php",
-        success : function(panier){
-          $("#panierBox").html(panier);
-        }
-      });
+        ajouterContenuPanier();
     });
-
-
-    //$.post( "test.php", { name: "John", time: "2pm" } );
-      $.ajax({
-        url : "commande.php",
-        success : function(panier){
-          $("#panierBox").html(panier);
-        }
-      });
+    ajouterContenuPanier(); // au chargement de la page
+    // Gestion du clic sur AJOUTER VIA AJAX
     $('div[data-nom]').click(function(e){
-      var nom = $(this).attr("data-nom");
+      var nom = $(this).attr("data-nom"); // on récupère le nom exemple Pull
       $.ajax({
         url : "",
-        data : {"nom" : nom} //data : {"nom": "chemise"},
+        data : {"nom" : nom} // on envoi le nom via $_GET celui-ci sera récupéré dans $_SESSION
       })
-      $.ajax({
-        url : "commande.php",
-        success : function(panier){
-          $("#panierBox").html(panier);
-        }
-      });
+      ajouterContenuPanier();
     })
   </script>
 </html>

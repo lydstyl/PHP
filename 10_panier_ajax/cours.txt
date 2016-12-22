@@ -1,0 +1,8 @@
+//affiche un warning
+include()
+include_once()
+
+// obligatoire erreur et arret PHP
+require()
+require_once
+

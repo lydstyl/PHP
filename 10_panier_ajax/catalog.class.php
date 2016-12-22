@@ -18,7 +18,6 @@
             for($i = 0, $il = count($this->itemsList); $i < $il; $i++){
                 $item = $this->itemsList[$i];
                 echo "<li>Nom : $item->nom<br/>Description : $item->description<br/>";
-                echo "Prix: $item->prix </ li><br/><a href='?nom=$item->nom'>Ajouter à la commande</a>";
                 echo "<div data-nom='$item->nom'>AJOUTER VIA AJAX</div>";
             }
             echo "</ul>";

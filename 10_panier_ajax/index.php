@@ -8,8 +8,8 @@
     <style>
       header{width:30%;float:right}
       li{margin-bottom: 20px;}
-      #goPanier{margin-top : 50px;}
-      div[data-nom]{width: 18%;border: 1px solid red}
+      #viderPanier{margin-top : 50px;}
+      div[data-nom],#viderPanier{width: 18%;border: 1px solid red}
     </style>
   </head>
   <body>
@@ -18,7 +18,7 @@
       <div id="panierBox"></div>
     </header>
     <h1>Panier en POO PHP + Ajax</h1>
-    <h2><a href="http://localhost/PHP/10_panier_ajax">Catalog</a></h2>
+    <h2>Catalog</h2>
     <?php
       include("./catalog.class.php");
       include("./commande.class.php");
@@ -43,8 +43,25 @@
         array_push($_SESSION['panier'], $item); // permet d'ajouter les noms des items dans $_SESSION
       }
     ?>
+    <div id="viderPanier">Vider le panier</div>
   </body>
   <script type="text/javascript">
+  //vider panier ici
+    $('#viderPanier').click(function(){
+        $.ajax({
+          url : "?viderPanier"
+          //data : {"nom" : nom} //data : {"nom": "chemise"},
+        })
+
+      $.ajax({
+        url : "commande.php",
+        success : function(panier){
+          $("#panierBox").html(panier);
+        }
+      });
+    });
+
+
     //$.post( "test.php", { name: "John", time: "2pm" } );
       $.ajax({
         url : "commande.php",

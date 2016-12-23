@@ -39,6 +39,8 @@
         echo $class::test();
         echo Statique::test();
 
+        // Singleton = solution pour instancier une unique fois notre class static
+
         
       ?>
   </body>

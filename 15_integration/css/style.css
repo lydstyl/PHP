@@ -1,0 +1,13 @@
+body{font-family: arial;font-size: 12px;}
+#page{max-width: 1500px;}
+/*#page{width: 990px;}*/
+.clear{clear:both}
+.firstBar {background-color: #433131;color:#987B7F}
+.firstBar div{width: 990px;margin:0 auto;}
+.firstBar ul{margin:0;padding: 0;float: right;font-size: 0;}
+.firstBar li{display: inline-block;min-width:40px;height: 50px;line-height:50px;font-size: 12px;text-align:center;border:1px solid black}
+.firstBar li:hover{background-color: #EE3E02;color:white}
+.firstBar img{width: 18px;height: 13px;vertical-align: middle;}
+.firstBar span:first-child{color:red}
+.firstBar span:last-child{color:white}
+.firstBar i{font-size: 14px;}

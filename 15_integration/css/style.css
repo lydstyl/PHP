@@ -1,13 +1,28 @@
+* {box-sizing: border-box;}
 body{font-family: arial;font-size: 12px;}
 #page{max-width: 1500px;}
-/*#page{width: 990px;}*/
 .clear{clear:both}
-.firstBar {background-color: #433131;color:#987B7F}
-.firstBar div{width: 990px;margin:0 auto;}
-.firstBar ul{margin:0;padding: 0;float: right;font-size: 0;}
-.firstBar li{display: inline-block;min-width:40px;height: 50px;line-height:50px;font-size: 12px;text-align:center;border:1px solid black}
-.firstBar li:hover{background-color: #EE3E02;color:white}
-.firstBar img{width: 18px;height: 13px;vertical-align: middle;}
-.firstBar span:first-child{color:red}
-.firstBar span:last-child{color:white}
-.firstBar i{font-size: 14px;}
+/*#page{width: 992px;}*/
+header{background-color: #8C8688}
+header .firstBar {background-color: #433131;color:#987B7F}
+header .firstBar div{width: 992px;margin:0 auto;}
+header .firstBar ul{margin:0;padding: 0;float: right;font-size: 0;}
+header .firstBar li{display: inline-block;min-width:40px;height: 50px;line-height:50px;font-size: 12px;text-align:center;border:1px solid black}
+header .firstBar li:hover{background-color: #EE3E02;color:white}
+header .firstBar img{width: 18px;height: 13px;vertical-align: middle;}
+header .firstBar span:first-child{color:red}
+header .firstBar span:last-child{color:white}
+header .firstBar i{font-size: 14px;}
+.slider {width: 992px;margin: 0 auto;}
+.slick-slide {margin: 0px 20px;width: 992px;}
+.slick-slide img {width: 100%;}
+.slick-prev:before, .slick-next:before {color: #6C5756;}
+.slick-prev:hover:before, .slick-next:hover:before {color: #EA4912;}
+header .menu {background-color: #433131;color:#FAF9F4}
+header .menu ul {width: 992px;margin: 0 auto;padding:0;font-size: 0;}
+header .menu li {display: inline-block; box-sizing:border-box;height: 60px;line-height:60px;padding:0 29px;font-size: 12px;border-left: 1px solid black;border-right: 1px solid black;}
+header .menu li:hover {background-color: #FC4207;}
+header .menu::after{content:"";display:block;height: 5px;background-color: #FC4207;}
+/*section .featuredBar .col-md-3 {height: 150px;}*/
+/*section .featuredBar img {width: 100%;}*/
+section .right {padding-left: 10px}

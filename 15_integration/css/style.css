@@ -4,7 +4,7 @@ body{font-family: arial;font-size: 12px;}
 h2{height: 60px; line-height:60px; margin: 0;color:#E22004}
 h3{font-size: 18px;margin: 0;}
 h4{margin: 14px 0 4px 0;color:#EB3F00}
-.clear{clear:both}
+.clear{clear:both;}
 /*#page{width: 992px;}*/
 header{background-color: #8C8688}
 header .firstBar {background-color: #433131;color:#987B7F}
@@ -79,6 +79,19 @@ header .menu::after{content:"";display:block;height: 5px;background-color: #FC42
 .middle .list .imgBox .possibility div:last-child div:nth-child(3){width: 56%;}
 .middle .list .imgBox .possibility div:last-child div:nth-child(3) a{width: 100%;background-color: #503C3D;color:#968082}
 .middle .list .product p{margin : 0}
+.middle .pagination{margin-bottom: 20px;}
+.middle .pagination a {color:#918E87}
+.middle .pagination div{width: 24px;height: 24px;line-height: 24px;border:1px solid lightgray;text-align: center;}
+.middle .pagination .left{width: 50%;float:left;font-size: 0;text-align: left;border:none}
+.middle .pagination .left div{display: inline-block;margin-right: 8px;font-size: 12px;}
+
+.middle .pagination .num{position: relative}
+.middle .pagination .num:hover{border:1px solid #E64100;background-color: #E64100;}
+.middle .pagination .num:hover a{color:white}
+.middle .pagination .num:hover:before{content: "";position:absolute;left:-1px;top:-8px;display:block;border-bottom:7px solid #E64100;border-left:12px solid rgba(0,0,0,0);border-right:12px solid rgba(0,0,0,0);}
+
+.middle .pagination .right{width: 52px;float:right}
+.middle .pagination .clear{width: 0;height: 0;border:none}
 footer{background-color: #453333;color:white}
 footer .centerBox{width: 992px;height: 80px;line-height:80px;margin:0 auto;}
 footer .centerBox ul{width: 640px;float:left;padding:0;font-size: 0;}

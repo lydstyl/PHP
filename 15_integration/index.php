@@ -33,44 +33,153 @@
         <div class="regular slider">
           <div><img src="./img/bigImage.jpg"></div>
           <div><img src="./img/bigImage.jpg"></div>
-      </div>
+        </div>
         <div class="menu">     
-          <ul>
-            <li>Home</li>
-            <li>Kids</li>
-            <li>Men
-                  <ul class="submenu">
-                        <div class="topBar"></div>
-                        <li>
-                              <ul class="column">
-                                    <li>Shoes</li>
-                                    <li>Ready to wear</li>
-                                    <li>Belts</li>
-                                    <li>Fragrance</li>
-                                    <li>Hats & Gloves</li>
-                                    <li>Sunglasses</li>
-                              </ul>
-                        </li>
-                        <li>
-                              <ul class="column">
-                                    <li>Ties</li>
-                                    <li>Wallets</li>
-                                    <li>Watches</li>
-                                    <li>Sports</li>
-                                    <li>Popular items</li>
-                                    <li>Top selling</li>
-                              </ul>
-                        </li>
-                        <div class="clear"></div>
-                  </ul>
-            </li>
-            <li>Women</li>
-            <li>Brands</li>
-            <li>Blog</li>
-            <li>Community</li>
-            <li>Delivery</li>
-            <li>Stores</li>
-            <li>Contacts</li>
+            <ul>
+            <?php 
+                  /* génération du menu et sous menu */
+                  $leMenu = array(
+                        "Home" => array(
+                              "Shoes",
+                              "Ready to wear",
+                              "Belts",
+                              "Fragrance",
+                              "Hats",
+                              "Sunglasses",
+                              "Ties",
+                              "Wallets",
+                              "Watches",
+                              "Sports",
+                              "Popular items",
+                              "Top selling"
+                        ),
+                        "Kids" => array(
+                              "Shoes",
+                              "Hats",
+                              "Sunglasses"
+                        ),
+                        "Men" => array(
+                              "Shoes",
+                              "Ready to wear",
+                              "Belts",
+                              "Fragrance",
+                              "Hats",
+                              "Sunglasses",
+                              "Ties",
+                              "Wallets",
+                              "Watches",
+                              "Sports",
+                              "Popular items",
+                              "Top selling"
+                        ),
+                        "Women" => array(
+                              "Shoes",
+                              "Ready to wear",
+                              "Belts",
+                              "Fragrance",
+                              "Hats",
+                              "Sunglasses",
+                              "Ties"
+                        ),
+                        "Brands" => array(
+                              "Test",
+                              "Ready to wear",
+                              "Belts",
+                              "Fragrance",
+                              "Ties",
+                              "Wallets",
+                              "Watches",
+                              "Sports",
+                              "Popular items"
+                        ),
+                        "Blog" => array(
+                              "Shoes",
+                              "Ready to wear",
+                              "Belts",
+                              "Fragrance",
+                              "Hats",
+                              "Sunglasses",
+                              "Ties",
+                              "Wallets",
+                              "Watches",
+                              "Sports",
+                              "Popular items",
+                              "Top selling"
+                        ),
+                        "Community" => array(
+                              "Shoes",
+                              "Ready to wear",
+                              "Belts",
+                              "Fragrance",
+                              "Hats",
+                              "Sunglasses",
+                              "Ties",
+                              "Wallets",
+                              "Watches",
+                              "Sports",
+                              "Popular items",
+                              "Top selling"
+                        ),
+                        "Delivery" => array(
+                              "Shoes",
+                              "Ready to wear",
+                              "Belts",
+                              "Fragrance",
+                              "Hats",
+                              "Sunglasses",
+                              "Ties",
+                              "Wallets",
+                              "Watches",
+                              "Sports",
+                              "Popular items",
+                              "Top selling"
+                        ),
+                        "Stores" => array(
+                              "Shoes",
+                              "Ready to wear",
+                              "Belts",
+                              "Fragrance",
+                              "Hats",
+                              "Sunglasses",
+                              "Ties",
+                              "Wallets",
+                              "Watches",
+                              "Sports",
+                              "Popular items",
+                              "Top selling"
+                        ),
+                        "Contacts" => array(
+                              "Shoes",
+                              "Ready to wear",
+                              "Belts",
+                              "Fragrance",
+                              "Hats",
+                              "Sunglasses",
+                              "Ties",
+                              "Wallets",
+                              "Watches",
+                              "Sports",
+                              "Popular items",
+                              "Top selling"
+                        ),
+                  );
+                  foreach($leMenu as $key => $value){
+                        $li ="<li>".$key."<ul class='submenu'><div class='topBar'></div>";
+
+                        for($i=0, $il = count($value); $i < $il; $i++){
+                              if($i == 0 || $i == 6){
+                                    $li .= "<li><ul class='column'>";
+                              }
+                              $li .= "<li>".$value[$i]."</li>";
+                              if($i == 5 || $i == ($il - 1)){
+                                    $li .= "</ul></li>";
+                              } 
+                        }
+
+                        $li .= "<div class='clear'></div></ul></li>";
+                        echo $li;
+                  }
+            ?>
           </ul>
         </div>
       </header>

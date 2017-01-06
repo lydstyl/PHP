@@ -32,7 +32,7 @@ header .menu li:hover .submenu{display:block}
 header .menu li .submenu{display:none;max-width: 260px;}
 header .submenu:hover{display: block;}
 header .submenu .topBar{height: 5px;background-color: #fc4207}
-header .submenu li{display:inline-block;width: 120px;padding: 0;border:none;background-color: #433131}
+header .submenu li{display:inline-block;width: 120px;padding: 0;border:none;background-color: #433131;vertical-align: top;}
 header .submenu > li:hover{background-color: #433131}
 header .submenu .column li {display: block;line-height: 30px;margin: 0 20px;border:none}
 header .submenu .column li:hover {background-color: #433131;color:#FC4207}

@@ -19,13 +19,13 @@
         <div class="firstBar">
           <div>            
             <ul>
-              <li><img src="./img/english.jpg" alt="english flag"></li>
-              <li><span>Good Evening,</span><span> versesdesign</span></li>
-              <li><i class="fa fa-comment"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-heart"></i></li>
-              <li><i class="fa fa-shopping-basket"></i></li>
-              <li><i class="fa fa-lock"></i></li>
+              <li><a href="#"><img src="./img/english.jpg" alt="english flag"></a></li>
+              <li><a href="#"><span>Good Evening,</span><span> versesdesign</span></a></li>
+              <li><a href="#"><i class="fa fa-comment"></i></a></li>
+              <li><a href="#"><i class="fa fa-star"></i></a></li>
+              <li><a href="#"><i class="fa fa-heart"></i></a></li>
+              <li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+              <li><a href="#"><i class="fa fa-lock"></i></a></li>
             </ul>
             <div class="clear"></div>
           </div>
@@ -170,7 +170,7 @@
                               if($i == 0 || $i == 6){
                                     $li .= "<li><ul class='column'>";
                               }
-                              $li .= "<li>".$value[$i]."</li>";
+                              $li .= "<a href='#'><li>".$value[$i]."</li></a>";
                               if($i == 5 || $i == ($il - 1)){
                                     $li .= "</ul></li>";
                               } 
@@ -181,6 +181,9 @@
                   }
             ?>
           </ul>
+
+          
+
         </div>
       </header>
       <div class="middle">
@@ -195,8 +198,10 @@
                               </div>
                               <div class="col-md-3">
                                     <span class="view">
-                                          <span class="fa fa-arrow-right"></span>
-                                          <span>view all items</span>
+                                          <a href="#">
+                                                <span class="fa fa-arrow-right"></span>
+                                                <span>view all items</span>
+                                          </a>
                                     </span>
                               </div>
                         </div>
@@ -208,30 +213,30 @@
                   <div class="row">
                         <div class="col-md-9 left">
                               <div class="row picture4">
+                                    <?php
+                                          $featuredItem = array(
+                                                "Gucci Shoes" => "./img/costume.jpg",
+                                                "Nike Sports Shoes" => "./img/costume.jpg",
+                                                "The veste" => "./img/featured.jpg",
+                                                "Nike Golf Cap" => "./img/costume.jpg"
+                                          );
+                                          foreach($featuredItem as $title => $imageUrl){
+                                    ?>
                                     <div class="col-md-3">
-                                          <img src="./img/costume.jpg">
-                                          <div>Gucci Shoes</div>
+                                          <img src="<?= $imageUrl; ?>">
+                                          <div><a href="#"><?= $title; ?></a></div>
                                     </div>
-                                    <div class="col-md-3">
-                                          <img src="./img/costume.jpg">
-                                          <div>Nike Sports Shoes</div>
-                                    </div>
-                                    <div class="col-md-3">
-                                          <img src="./img/costume.jpg">
-                                          <div>Nike Golf Cap</div>
-                                    </div>
-                                    <div class="col-md-3">
-                                          <img src="./img/costume.jpg">
-                                          <div>Nike Golf Cap</div>
-                                    </div>
+                                    <?php } ?>
                               </div>
                         </div>
                         <div class="col-md-3 right">
                               <div>GUCCI</div>
                               <div class="clear"></div>
                               <div>
-                                    <span class="fa fa-arrow-right"></span>
-                                    <span>view our brands</span>
+                                    <a href="#">
+                                          <span class="fa fa-arrow-right"></span>
+                                          <span>view our brands</span>
+                                    </a>
                               </div>
                         </div>
                   </div>
@@ -239,10 +244,29 @@
             <div class="centerBox">
                   <div class="colLeft">
                         <h2>Popular categories</h2>     
-                        <div class="arrow"><strong>WOMEN </strong><span>SHOES STARTS FROM</span><span>$50</span></div> 
-                        <div class="arrow"><strong>MEN </strong><span>DRESS SHOES STARTS FROM</span><span>$170</span></div> 
-                        <div class="arrow"><strong>WOMEN </strong><span>SHOES STARTS FROM</span><span>$50</span></div> 
-                        <div class="arrow"><strong>WOMEN </strong><span>SHOES STARTS FROM</span><span>$50</span></div> 
+                        <?php 
+                              $arrow = [
+                                    "WOMEN" => [
+                                          "normal" => "SHOES STARTS FROM",
+                                          "price" => "50"
+                                    ],
+                                    "MEN" => [
+                                          "normal" => "DRESS SHOES STARTS FROM",
+                                          "price" => "170"
+                                    ],
+                                    "OTHER" => [
+                                          "normal" => "SHOES STARTS FROM",
+                                          "price" => "50"
+                                    ],
+                                    "THING" => [
+                                          "normal" => "SHOES STARTS FROM",
+                                          "price" => "50"
+                                    ]
+                              ];
+                              foreach($arrow as $strong => $the){
+                        ?>
+                        <div class="arrow"><a href="#"><strong><?= $strong ?></strong><span> <?= $the["normal"] ?></span><span>$<?= $the["price"] ?></span></a></div> 
+                        <?php } ?>
                         <div class="clear"></div>
                         <h2>What's hot</h2>  
                         <div class="store">
@@ -283,150 +307,90 @@
                               <input type="text" name="choose" value="">
                               <input type="submit" name="search" value="Search">
                         </form>
-                        <div class="list">
-                              <div class="product">
-                                    <div class="imgBox">
-                                          <img src="./img/clothe.jpg" alt="">
-                                          <div class="possibility">
-                                                <div>$525</div>
-                                                <div class="more">
-                                                      <div><a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#">View Details</a></div>
+                        <?php
+                              $productList = array(
+                                    "Gucci ready to wear" => array(
+                                          "image" => "./img/clothe.jpg",
+                                          "prix" => "$525",
+                                          "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing."
+                                    ),
+                                    "Veste" => array(
+                                          "image" => "./img/veste.jpg",
+                                          "prix" => "$200",
+                                          "description" => "Veste légère en kevlar."
+                                    ),
+                                    "Robe" => array(
+                                          "image" => "./img/clothe.jpg",
+                                          "prix" => "$525",
+                                          "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing."
+                                    ),
+                                    "Pull" => array(
+                                          "image" => "./img/clothe.jpg",
+                                          "prix" => "$525",
+                                          "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing."
+                                    ),
+                                    "String" => array(
+                                          "image" => "./img/clothe.jpg",
+                                          "prix" => "$525",
+                                          "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing."
+                                    ),
+                                    "Chaussette" => array(
+                                          "image" => "./img/clothe.jpg",
+                                          "prix" => "$525",
+                                          "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing."
+                                    ),
+                                    "Pijama" => array(
+                                          "image" => "./img/clothe.jpg",
+                                          "prix" => "$100",
+                                          "description" => "Un pijama Babar."
+                                    ),
+                                    "Blouson" => array(
+                                          "image" => "./img/clothe.jpg",
+                                          "prix" => "$525",
+                                          "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing."
+                                    ),
+                                    "Ceinture" => array(
+                                          "image" => "./img/clothe.jpg",
+                                          "prix" => "$25",
+                                          "description" => "Une superbe ceinture."
+                                    ),
+                              );
+                              /* génération de la liste des articles */
+                              /* version mini pour insérer une variable dans du html : <?= "Hello";?> */
+                              $productNumber = count($productList);
+                              $i = 0;
+                              $html = "";
+                              foreach($productList as $title => $product){
+                                    $i ++;
+                                    if($i == 1){
+                                          $html .= "<div class='list'>";
+                                    }
+                                    if($i == 4 || $i == 7){
+                                          $html .= "<hr>";
+                                    }
+                                    $html .= "
+                                          <div class='product'>
+                                                <div class='imgBox'>
+                                                      <img src=".$product['image']." alt=''>
+                                                      <div class='possibility'>
+                                                            <div>".$product['prix']."</div>
+                                                            <div class='more'>
+                                                                  <div><a href='#'><i class='fa fa-cart-plus' aria-hidden='true'></i></a></div>
+                                                                  <div><a href='#'><i class='fa fa-heart' aria-hidden='true'></i></a></div>
+                                                                  <div><a href='#'>View Details</a></div>
+                                                            </div>
+                                                      </div>
                                                 </div>
+                                                <h4>".$title."</h4>
+                                                <p>".$product['description']."</p>
                                           </div>
-                                    </div>
-                                    <h4>Gucci ready to wear</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                              </div>
-                              <div class="product">
-                                    <div class="imgBox">
-                                          <img src="./img/clothe.jpg" alt="">
-                                          <div class="possibility">
-                                                <div>$525</div>
-                                                <div class="more">
-                                                      <div><a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#">View Details</a></div>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <h4>Gucci ready to wear</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                              </div>
-                              <div class="product">
-                                    <div class="imgBox">
-                                          <img src="./img/clothe.jpg" alt="">
-                                          <div class="possibility">
-                                                <div>$525</div>
-                                                <div class="more">
-                                                      <div><a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#">View Details</a></div>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <h4>Gucci ready to wear</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                              </div>
-                        </div>
-                        <hr>
-                        <div class="list">
-                              <div class="product">
-                                    <div class="imgBox">
-                                          <img src="./img/clothe.jpg" alt="">
-                                          <div class="possibility">
-                                                <div>$525</div>
-                                                <div class="more">
-                                                      <div><a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#">View Details</a></div>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <h4>Gucci ready to wear</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                              </div>
-                              <div class="product">
-                                    <div class="imgBox">
-                                          <img src="./img/clothe.jpg" alt="">
-                                          <div class="possibility">
-                                                <div>$525</div>
-                                                <div class="more">
-                                                      <div><a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#">View Details</a></div>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <h4>Gucci ready to wear</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                              </div>
-                              <div class="product">
-                                    <div class="imgBox">
-                                          <img src="./img/clothe.jpg" alt="">
-                                          <div class="possibility">
-                                                <div>$525</div>
-                                                <div class="more">
-                                                      <div><a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#">View Details</a></div>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <h4>Gucci ready to wear</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                              </div>
-                        </div>
-                        <hr>
-                        <div class="list">
-                              <div class="product">
-                                    <div class="imgBox">
-                                          <img src="./img/clothe.jpg" alt="">
-                                          <div class="possibility">
-                                                <div>$525</div>
-                                                <div class="more">
-                                                      <div><a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#">View Details</a></div>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <h4>Gucci ready to wear</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                              </div>
-                              <div class="product">
-                                    <div class="imgBox">
-                                          <img src="./img/clothe.jpg" alt="">
-                                          <div class="possibility">
-                                                <div>$525</div>
-                                                <div class="more">
-                                                      <div><a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#">View Details</a></div>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <h4>Gucci ready to wear</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                              </div>
-                              <div class="product">
-                                    <div class="imgBox">
-                                          <img src="./img/clothe.jpg" alt="">
-                                          <div class="possibility">
-                                                <div>$525</div>
-                                                <div class="more">
-                                                      <div><a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></div>
-                                                      <div><a href="#">View Details</a></div>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <h4>Gucci ready to wear</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                              </div>
-                        </div>
-                        <hr>
+                                    ";
+                                    if($i == $productNumber){
+                                          $html .= "</div><hr>";
+                                    }
+                              }
+                              echo $html;
+                        ?>
                         <div class="pagination">
                               <div class="left">
                                     <div><a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>

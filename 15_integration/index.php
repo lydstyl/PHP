@@ -271,7 +271,7 @@
                         <h2>What's hot</h2>  
                         <div class="store">
                               <div class="left">
-                                    <h3>WOMEN STORE</h3><strong>GARMENTS & ACCESSORIES</strong>
+                                    <a href="#"><h3>WOMEN STORE</h3></a><strong>GARMENTS & ACCESSORIES</strong>
                               </div>
                               <div class="right">
                                     <div>Starts from</div><div><span>$</span><div>45</div></div>
@@ -279,7 +279,7 @@
                         </div>    
                         <div class="store men">
                               <div class="left">
-                                    <h3>MEN STORE</h3><strong>GARMENTS & ACCESSORIES</strong>
+                                    <a href="#"><h3>MEN STORE</h3></a><strong>GARMENTS & ACCESSORIES</strong>
                               </div>
                               <div class="right">
                                     <div>Starts from</div><div><span>$</span><div>50</div></div>
@@ -293,8 +293,10 @@
                   <div class="colRight">
                         <h2>Top selling items</h2>  
                         <span class="view">
-                              <span class="fa fa-arrow-right"></span>
-                              <span>view all items</span>
+                              <a href="#">
+                                    <span class="fa fa-arrow-right"></span>
+                                    <span>view all items</span>
+                              </a>
                         </span>    
                         <div class="clear"></div>
                         <form>
@@ -410,21 +412,21 @@
       <footer>
             <div class="centerBox">
                   <ul>
-                        <li>Blog</li>
-                        <li>About</li>
-                        <li>Contact</li>
-                        <li>Press</li>
-                        <li>Developers</li>
-                        <li>Careers</li>
-                        <li>Terms</li>
-                        <li>Privacy</li>
-                        <li>Copyright</li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Developers</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Copyright</a></li>
                   </ul>
                   <div class="right">
                         <div>Connect with us</div>
-                        <div><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                        <div><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                        <div><i class="fa fa-rss" aria-hidden="true"></i></div>
+                        <div><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
+                        <div><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+                        <div><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></div>
                   </div>
                   <div class="clear"></div>
             </div>

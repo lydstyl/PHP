@@ -13,3 +13,18 @@ INSERT INTO `User` SET `id`="1",`nom`="Dabir",`prenom`="Maurice";
 DELETE FROM `User` WHERE `prenom`='Mathieu';
 DELETE FROM `User` WHERE `id`='4';
 DELETE FROM `User` WHERE `id`='4' OR `id`='1';
+-- TYPE DE DONNEES
+INT --> entier
+VARCHAR --> 1 à 255
+TEXT --> 1 à 512
+DATE --> 11/02/2012
+-- REQUETE PLUS COMPLIQUEE
+SELECT * FROM `user` WHERE `nom` LIKE "%n%" AND `prenom` LIKE '%a%' AND `id` != '0';
+-- LIMITER LE NOMBRE DE RESULTATS
+SELECT * FROM `user` WHERE `nom` NOT LIKE '%b%' LIMIT 1; -- n'affiche ici qu'un seul résultat 
+LIMIT 5 -- 5 premiers résultats
+LIMIT 5,10 --remonte les résultats 6 à 15. 5 est l'offset
+-- METTRE A JOUR DES DONNEES
+UPDATE `user` SET `nom`='eeee', `prenom`='eee' WHERE `id`='1'
+-- DELETE
+DELETE FROM `user` WHERE `id`=2

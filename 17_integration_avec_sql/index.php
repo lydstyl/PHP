@@ -55,18 +55,14 @@
                 //               "Hats",
                 //               "Sunglasses"
                 //         ),-->
-            
         <div class="menu">     
             <ul>
             <?php 
-
-
                 $mysqli = mysqli_connect("localhost","root", "", "gucci") or die(
                     "Impossible de se connecter : ".mysqli_error()
                     //printf("Message d'erreur : %s\n", mysqli_error($mysqli));
                 );
                 mysqli_query($mysqli, 'SET NAMES UTF8');
-
                 $resultat = mysqli_query($mysqli, 'SELECT * FROM `menu` ORDER BY `id`');
                 $li = "";
                 while($data = mysqli_fetch_assoc($resultat)){ // tant que tu reçois des données tu les affiches
@@ -81,10 +77,9 @@
                                     <ul class='submenu'>
                                         <div class='topBar'></div>
                             ";
-                    
-
                     $resultat2 = mysqli_query($mysqli, "SELECT * FROM `submenu` WHERE `id_menu`=".$idMenu." ORDER BY `id_menu`,`id`");
                     $i = 0;
+
                     while($data2 = mysqli_fetch_assoc($resultat2)){
                         //$id = $data2['id'];
                         $id_menu = $data2['id_menu'];
@@ -93,8 +88,6 @@
                         $subMenuNb = mysqli_fetch_assoc(mysqli_query($mysqli, 'SELECT COUNT(*) FROM `submenu`'));
                         $subMenuNb =  $subMenuNb['COUNT(*)'];
                         // $resultat3 = mysqli_query($mysqli, 'SELECT COUNT(*) FROM `submenu`');
-
-
                         // if($i == 0 || $i == 6){
                         //     $li .= "<li><ul class='column'>";
                         // }
@@ -103,15 +96,8 @@
                         //     $li .= "</ul></li>";
                         // } 
                         // $i ++;
-                       
                         $li .= "<li>".$subMenuName."</li>";
-
                     }
-
-
-
-
-
                     $li .=  "
                                         <div class='clear'></div>
                                     </ul>
@@ -119,8 +105,6 @@
                             ";
                 }
                 echo $li;
-
-
                 //   foreach($leMenu as $key => $value){
                 //         $li ="<li>".$key."<ul class='submenu'><div class='topBar'></div>";
 
@@ -139,9 +123,6 @@
                 //   }
             ?>
           </ul>
-
-          
-
         </div>
       </header>
       <div class="middle">

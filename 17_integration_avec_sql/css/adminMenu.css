@@ -1,0 +1,4 @@
+#page{width: 320px;margin:auto}
+div form{display: inline-block}
+body>form:last-child{margin:20px}
+input[src$=".png"]{width: 16px;height: 16px;}

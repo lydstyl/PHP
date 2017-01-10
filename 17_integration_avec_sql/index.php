@@ -248,90 +248,41 @@
                               <input type="text" name="choose" value="">
                               <input type="submit" name="search" value="Search">
                         </form>
+                        <div class="list">
                         <?php
-                              $productList = array(
-                                    "Gucci ready to wear" => array(
-                                          "image" => "./img/clothe.jpg",
-                                          "prix" => "$525",
-                                          "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing."
-                                    ),
-                                    "Veste" => array(
-                                          "image" => "./img/veste.jpg",
-                                          "prix" => "$200",
-                                          "description" => "Veste légère en kevlar."
-                                    ),
-                                    "Robe" => array(
-                                          "image" => "./img/clothe.jpg",
-                                          "prix" => "$525",
-                                          "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing."
-                                    ),
-                                    "Pull" => array(
-                                          "image" => "./img/clothe.jpg",
-                                          "prix" => "$525",
-                                          "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing."
-                                    ),
-                                    "String" => array(
-                                          "image" => "./img/clothe.jpg",
-                                          "prix" => "$525",
-                                          "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing."
-                                    ),
-                                    "Chaussette" => array(
-                                          "image" => "./img/clothe.jpg",
-                                          "prix" => "$525",
-                                          "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing."
-                                    ),
-                                    "Pijama" => array(
-                                          "image" => "./img/clothe.jpg",
-                                          "prix" => "$100",
-                                          "description" => "Un pijama Babar."
-                                    ),
-                                    "Blouson" => array(
-                                          "image" => "./img/clothe.jpg",
-                                          "prix" => "$525",
-                                          "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing."
-                                    ),
-                                    "Ceinture" => array(
-                                          "image" => "./img/clothe.jpg",
-                                          "prix" => "$25",
-                                          "description" => "Une superbe ceinture."
-                                    ),
-                              );
-                              /* génération de la liste des articles */
-                              /* version mini pour insérer une variable dans du html : <?= "Hello";?> */
-                              $productNumber = count($productList);
-                              $i = 0;
-                              $html = "";
-                              foreach($productList as $title => $product){
-                                    $i ++;
-                                    if($i == 1){
-                                          $html .= "<div class='list'>";
-                                    }
-                                    if($i == 4 || $i == 7){
-                                          $html .= "<hr>";
-                                    }
-                                    $html .= "
-                                          <div class='product'>
-                                                <div class='imgBox'>
-                                                      <img src=".$product['image']." alt=''>
-                                                      <div class='possibility'>
-                                                            <div>".$product['prix']."</div>
-                                                            <div class='more'>
-                                                                  <div><a href='#'><i class='fa fa-cart-plus' aria-hidden='true'></i></a></div>
-                                                                  <div><a href='#'><i class='fa fa-heart' aria-hidden='true'></i></a></div>
-                                                                  <div><a href='#'>View Details</a></div>
-                                                            </div>
-                                                      </div>
-                                                </div>
-                                                <h4>".$title."</h4>
-                                                <p>".$product['description']."</p>
-                                          </div>
-                                    ";
-                                    if($i == $productNumber){
-                                          $html .= "</div><hr>";
-                                    }
-                              }
-                              echo $html;
+                            $resultat = mysqli_query($mysqli, 'SELECT * FROM `product` ORDER BY `id`');
+                            $li = "";
+                            $i = 0;
+                            while($data = mysqli_fetch_assoc($resultat)){ // tant que tu reçois des données tu les affiches
+                                $id = $data['id'];
+                                $name = $data['name'];
+                                $price = $data['price'];
+                                $description = $data['description'];
+                                $image = $data['image'];
                         ?>
+                            <div class='product'>
+                                <div class='imgBox'>
+                                    <img src="<?= $image ?>" alt='image'>
+                                    <div class='possibility'>
+                                            <div><?= $price ?></div>
+                                            <div class='more'>
+                                                <div><a href='#'><i class='fa fa-cart-plus' aria-hidden='true'></i></a></div>
+                                                <div><a href='#'><i class='fa fa-heart' aria-hidden='true'></i></a></div>
+                                                <div><a href='#'>View Details</a></div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <h4><?= $name ?></h4>
+                                <p><?= $description ?></p>
+                            </div>
+                        <?php
+                                $i ++;
+                                if($i == 3  || $i ==6){
+                                    echo"<hr>";
+                                }
+                            }
+                        ?>
+                        </div>
                         <div class="pagination">
                               <div class="left">
                                     <div><a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>

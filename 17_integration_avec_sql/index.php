@@ -34,10 +34,7 @@
           <div><img src="./img/bigImage.jpg"></div>
           <div><img src="./img/bigImage.jpg"></div>
         </div>
-        <div class="menu">     
-            <ul>
-            <?php 
-                  /* génération du menu et sous menu */
+                  <!--/* génération du menu et sous menu */
                 //   $leMenu = array(
                 //         "Home" => array(
                 //               "Shoes",
@@ -57,112 +54,11 @@
                 //               "Shoes",
                 //               "Hats",
                 //               "Sunglasses"
-                //         ),
-                //         "Men" => array(
-                //               "Shoes",
-                //               "Ready to wear",
-                //               "Belts",
-                //               "Fragrance",
-                //               "Hats",
-                //               "Sunglasses",
-                //               "Ties",
-                //               "Wallets",
-                //               "Watches",
-                //               "Sports",
-                //               "Popular items",
-                //               "Top selling"
-                //         ),
-                //         "Women" => array(
-                //               "Shoes",
-                //               "Ready to wear",
-                //               "Belts",
-                //               "Fragrance",
-                //               "Hats",
-                //               "Sunglasses",
-                //               "Ties"
-                //         ),
-                //         "Brands" => array(
-                //               "Test",
-                //               "Ready to wear",
-                //               "Belts",
-                //               "Fragrance",
-                //               "Ties",
-                //               "Wallets",
-                //               "Watches",
-                //               "Sports",
-                //               "Popular items"
-                //         ),
-                //         "Blog" => array(
-                //               "Shoes",
-                //               "Ready to wear",
-                //               "Belts",
-                //               "Fragrance",
-                //               "Hats",
-                //               "Sunglasses",
-                //               "Ties",
-                //               "Wallets",
-                //               "Watches",
-                //               "Sports",
-                //               "Popular items",
-                //               "Top selling"
-                //         ),
-                //         "Community" => array(
-                //               "Shoes",
-                //               "Ready to wear",
-                //               "Belts",
-                //               "Fragrance",
-                //               "Hats",
-                //               "Sunglasses",
-                //               "Ties",
-                //               "Wallets",
-                //               "Watches",
-                //               "Sports",
-                //               "Popular items",
-                //               "Top selling"
-                //         ),
-                //         "Delivery" => array(
-                //               "Shoes",
-                //               "Ready to wear",
-                //               "Belts",
-                //               "Fragrance",
-                //               "Hats",
-                //               "Sunglasses",
-                //               "Ties",
-                //               "Wallets",
-                //               "Watches",
-                //               "Sports",
-                //               "Popular items",
-                //               "Top selling"
-                //         ),
-                //         "Stores" => array(
-                //               "Shoes",
-                //               "Ready to wear",
-                //               "Belts",
-                //               "Fragrance",
-                //               "Hats",
-                //               "Sunglasses",
-                //               "Ties",
-                //               "Wallets",
-                //               "Watches",
-                //               "Sports",
-                //               "Popular items",
-                //               "Top selling"
-                //         ),
-                //         "Contacts" => array(
-                //               "Shoes",
-                //               "Ready to wear",
-                //               "Belts",
-                //               "Fragrance",
-                //               "Hats",
-                //               "Sunglasses",
-                //               "Ties",
-                //               "Wallets",
-                //               "Watches",
-                //               "Sports",
-                //               "Popular items",
-                //               "Top selling"
-                //         ),
-                //   );
+                //         ),-->
+            
+        <div class="menu">     
+            <ul>
+            <?php 
 
 
                 $mysqli = mysqli_connect("localhost","root", "", "gucci") or die(
@@ -199,14 +95,16 @@
                         // $resultat3 = mysqli_query($mysqli, 'SELECT COUNT(*) FROM `submenu`');
 
 
-                        if($i == 0 || $i == 6){
-                            $li .= "<li><ul class='column'>";
-                        }
-                        $li .= "<a href='#'><li>".$subMenuName."</li></a>";
-                        if($i == 5 || $i == ($subMenuNb - 1)){
-                            $li .= "</ul></li>";
-                        } 
-                        $i ++;
+                        // if($i == 0 || $i == 6){
+                        //     $li .= "<li><ul class='column'>";
+                        // }
+                        // $li .= "<a href='#'><li>".$subMenuName."</li></a>";
+                        // if($i == 5 || $i == ($subMenuNb - 1)){
+                        //     $li .= "</ul></li>";
+                        // } 
+                        // $i ++;
+                       
+                        $li .= "<li>".$subMenuName."</li>";
 
                     }
 

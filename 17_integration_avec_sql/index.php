@@ -193,7 +193,9 @@
             </div>
             <div class="centerBox">
                   <div class="colLeft">
-                        <h2>Popular categories</h2>     
+                        <h2>Popular categories</h2>  
+                        
+                           
                         <?php 
                               $arrow = [
                                     "WOMEN" => [
@@ -217,6 +219,9 @@
                         ?>
                         <div class="arrow"><a href="#"><strong><?= $strong ?></strong><span> <?= $the["normal"] ?></span><span>$<?= $the["price"] ?></span></a></div> 
                         <?php } ?>
+
+
+
                         <div class="clear"></div>
                         <h2>What's hot</h2>  
                         <div class="store">
@@ -288,7 +293,7 @@
                             </div>
                         <?php
                                 $i ++;
-                                if($i == 3  || $i ==6){
+                                if($i == 3  || $i == 6 || $i == 9){
                                     echo"<hr>";
                                 }
                             }

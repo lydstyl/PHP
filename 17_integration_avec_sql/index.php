@@ -63,7 +63,7 @@
                     //printf("Message d'erreur : %s\n", mysqli_error($mysqli));
                 );
                 mysqli_query($mysqli, 'SET NAMES UTF8');
-                $resultat = mysqli_query($mysqli, 'SELECT * FROM `menu` ORDER BY `id`');
+                $resultat = mysqli_query($mysqli, 'SELECT * FROM `menu` ORDER BY `position`');
                 $li = "";
                 while($data = mysqli_fetch_assoc($resultat)){ // tant que tu reçois des données tu les affiches
                     $idMenu = $data['id'];

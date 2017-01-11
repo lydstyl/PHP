@@ -21,21 +21,21 @@
         $name = $data['name'];
 ?>
 <div>
-    <form method="post" action="setMenu.php">
-        <span><?= $id ?></span>
+    <form method="post" action="./admin.php?right=setMenu">
+        <!--<span><?= $id ?></span>-->
         <span><?= $name ?></span>
         <input type="hidden" name="id" value="<?= $id ?>" />
         <input type="hidden" name="type" value="editer" />
         <input type="hidden" name="value" value="<?= $name ?>" />
         <input type="image" src="./img/edit.png">
     </form> 
-    <form method="post" action="adminMenu.php">
+    <form method="post" action="./admin.php?right=menu">
         <input type="hidden" name="id" value="<?= $id ?>" />
         <input type="hidden" name="type" value="supprimer" />
         <input type="image" src="./img/delete.png">
     </form> 
 </div>
 <?php } ?>
-<form method="post" action="setMenu.php">
+<form method="post" action="./admin.php?right=setMenu">
     <input type="submit" name="type" value="ajouter">
 </form> 

@@ -9,7 +9,6 @@
         <div id="page">
             <h1>ADMIN</h1>
             <ul class='menu left'>
-                <li><a href="./admin.php?right=test">Test</a></li>
                 <li><a href="./admin.php?right=menu">Menu</a></li>
                 <li><a href="./admin.php">Slider</a></li>
                 <li><a href="./admin.php?right=product">Produit</a></li>
@@ -27,6 +26,7 @@
                             case 'setProduct':
                             case 'setText':
                             case 'menu':
+                            case 'setMenu':
                                 //inclusion
                                 include('./'.$_GET['right'].'.php');
                                 break;

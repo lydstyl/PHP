@@ -6,7 +6,7 @@
     if(isset($_POST['type']) && $_POST['type'] == 'ajouter'){
 ?>
         <form method="post" action="./admin.php?right=menu">
-            <input type="text" name="add"> <!-- ou ajouter récupérer l'info en poste ou en get avant de générer ... -->
+            <input type="text" name="add" value=""> <!-- ou ajouter récupérer l'info en poste ou en get avant de générer ... -->
             <input type="submit" value="<?= $_POST['type'] ?>">
         </form>
 <?php 
@@ -16,8 +16,11 @@
 ?>
         <form method="post" action="./admin.php?right=menu">
             <input type="hidden" name="id" value="<?= $_POST['id'] ?>" />
+            <div>
+                <span>position : </span>
+                <input type="text" name="position" value="<?= $_POST['position'] ?>">
+            </div>
             <input type="text" name="edit" value="<?= $_POST['value'] ?>">
-            <!--<input type="submit" value="<?= $_POST['type'] ?>">-->
             <input type="image" src="./img/edit.png">
         </form>
 <?php 

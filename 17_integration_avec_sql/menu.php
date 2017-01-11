@@ -12,20 +12,22 @@
     }
     //edition
     if (isset($_POST['edit']) && $_POST['edit'] != ''){ 
-        mysqli_query($link, 'UPDATE `menu` SET `name`="'.$_POST['edit'].'" WHERE `id`='.$_POST['id']);
+        mysqli_query($link, 'UPDATE `menu` SET `position`="'.$_POST['position'].'", `name`="'.$_POST['edit'].'" WHERE `id`='.$_POST['id']);
     }
     //selection et affichage d'éléments de la BDD
-    $resultat = mysqli_query($link, 'SELECT * FROM `menu` ORDER BY `id`');
+    $resultat = mysqli_query($link, 'SELECT * FROM `menu` ORDER BY `position`, `name`');
     while($data = mysqli_fetch_assoc($resultat)){ // tant que tu reçois des données tu les affiches
         $id = $data['id'];
+        $position = $data['position'];
         $name = $data['name'];
 ?>
 <div>
     <form method="post" action="./admin.php?right=setMenu">
-        <!--<span><?= $id ?></span>-->
+        <span>Position <?= $position ?> : </span>
         <span><?= $name ?></span>
         <input type="hidden" name="id" value="<?= $id ?>" />
         <input type="hidden" name="type" value="editer" />
+        <input type="hidden" name="position" value="<?= $position ?>" />
         <input type="hidden" name="value" value="<?= $name ?>" />
         <input type="image" src="./img/edit.png">
     </form> 

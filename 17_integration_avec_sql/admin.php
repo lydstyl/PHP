@@ -31,6 +31,8 @@
                             case 'product':
                             case 'setProduct':
                             case 'setText':
+                            case 'featured':
+                            case 'setfeatured':
                                 //inclusion
                                 include('./'.$_GET['right'].'.php');
                                 break;

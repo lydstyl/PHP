@@ -165,22 +165,19 @@
                   </div>
                   <div class="row">
                         <div class="col-md-9 left">
-                              <div class="row picture4">
-                                    <?php
-                                          $featuredItem = array(
-                                                "Gucci Shoes" => "./img/costume.jpg",
-                                                "Nike Sports Shoes" => "./img/costume.jpg",
-                                                "The veste" => "./img/featured.jpg",
-                                                "Nike Golf Cap" => "./img/costume.jpg"
-                                          );
-                                          foreach($featuredItem as $title => $imageUrl){
-                                    ?>
-                                    <div class="col-md-3">
-                                          <img src="<?= $imageUrl; ?>">
-                                          <div><a href="#"><?= $title; ?></a></div>
-                                    </div>
-                                    <?php } ?>
-                              </div>
+                            <div class="row picture4">
+                            <?php
+                            $resultat = mysqli_query($mysqli, 'SELECT * FROM `product` WHERE `featured`>0 ORDER BY `featured` DESC, `id` LIMIT 4');
+                            while($data = mysqli_fetch_assoc($resultat)){ // tant que tu reçois des données tu les affiches
+                            ?>
+                                <div class="col-md-3">
+                                    <img src="<?= $data['image'] ?>" alt="img">
+                                    <div><a href="#"><?= $data['name'] ?></a></div>
+                                </div>
+                            <?php
+                            }
+                            ?>
+                            </div>
                         </div>
                         <div class="col-md-3 right">
                               <div>GUCCI</div>
@@ -278,7 +275,7 @@
                                 <div class='imgBox'>
                                     <img src="<?= $image ?>" alt='image'>
                                     <div class='possibility'>
-                                            <div><?= $price ?></div>
+                                            <div>$<?= $price ?></div>
                                             <div class='more'>
                                                 <div><a href='#'><i class='fa fa-cart-plus' aria-hidden='true'></i></a></div>
                                                 <div><a href='#'><i class='fa fa-heart' aria-hidden='true'></i></a></div>

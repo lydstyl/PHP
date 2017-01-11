@@ -30,10 +30,24 @@
             <div class="clear"></div>
           </div>
         </div>
-        <div class="regular slider">
-          <div><img src="./img/bigImage.jpg"></div>
-          <div><img src="./img/bigImage.jpg"></div>
-        </div>
+        <!--slider-->
+                <div class="regular slider">
+        <?php 
+            $mysqli = mysqli_connect("localhost","root", "", "gucci") or die(
+                "Impossible de se connecter : ".mysqli_error()
+                //printf("Message d'erreur : %s\n", mysqli_error($mysqli));
+            );
+            mysqli_query($mysqli, 'SET NAMES UTF8');
+
+            $resultat = mysqli_query($mysqli, 'SELECT * FROM `slider` ORDER BY `position`,`id` DESC LIMIT 3');
+            while($data = mysqli_fetch_assoc($resultat)){
+                $img = $data['image_name'];
+        ?>
+                    <div><img src="./img/<?= $img ?>"></div>
+        <?php
+            }
+        ?>
+                </div>
                   <!--/* génération du menu et sous menu */
                 //   $leMenu = array(
                 //         "Home" => array(
@@ -58,11 +72,11 @@
         <div class="menu">     
             <ul>
             <?php 
-                $mysqli = mysqli_connect("localhost","root", "", "gucci") or die(
-                    "Impossible de se connecter : ".mysqli_error()
-                    //printf("Message d'erreur : %s\n", mysqli_error($mysqli));
-                );
-                mysqli_query($mysqli, 'SET NAMES UTF8');
+                // $mysqli = mysqli_connect("localhost","root", "", "gucci") or die(
+                //     "Impossible de se connecter : ".mysqli_error()
+                //     //printf("Message d'erreur : %s\n", mysqli_error($mysqli));
+                // );
+                // mysqli_query($mysqli, 'SET NAMES UTF8');
                 $resultat = mysqli_query($mysqli, 'SELECT * FROM `menu` ORDER BY `position`');
                 $li = "";
                 while($data = mysqli_fetch_assoc($resultat)){ // tant que tu reçois des données tu les affiches

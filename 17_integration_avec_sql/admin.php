@@ -9,10 +9,13 @@
         <div id="page">
             <h1>ADMIN</h1>
             <ul class='menu left'>
+                <li><a href="./admin.php?right=slider">Slider</a></li>
                 <li><a href="./admin.php?right=menu">Menu</a></li>
-                <li><a href="./admin.php">Slider</a></li>
+                <li><a href="./admin.php?right=featured">Featured</a></li>
+                <li><a href="./admin.php?right=popular">Popular</a></li>
                 <li><a href="./admin.php?right=product">Produit</a></li>
-                <li><a href="./admin.php">Liste produit + pagination</a></li>
+                <li><a href="./admin?right=pagination.php">Liste produit + pagination</a></li>
+                <li><a href="./admin.php?right=bottomMenu">Menu du bas</a></li>
             </ul>
             <div class="right">
                 <?php
@@ -21,12 +24,13 @@
                     mysqli_query($link, 'SET NAMES UTF8');
                     if (isset($_GET['right']) && $_GET['right'] != ''){
                         switch ($_GET['right']) {
-                            case 'test':
+                            case 'slider':
+                            case 'setSliderImg':
+                            case 'menu':
+                            case 'setMenu':
                             case 'product':
                             case 'setProduct':
                             case 'setText':
-                            case 'menu':
-                            case 'setMenu':
                                 //inclusion
                                 include('./'.$_GET['right'].'.php');
                                 break;

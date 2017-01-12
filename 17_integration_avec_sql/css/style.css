@@ -26,7 +26,8 @@ header .slick-prev {left: 20px;z-index: 100}
 header .slick-prev:before, .slick-next:before {color: #6C5756;}
 header .slick-prev:hover:before, .slick-next:hover:before {color: #EA4912;}
 header .menu {background-color: #433131;color:#FAF9F4}
-header .menu ul {width: 992px;margin: 0 auto;padding:0;font-size: 0;}
+/*header .menu ul {width: 992px;margin: 0 auto;padding:0;font-size: 0;}*/
+header .menu ul {width: 992px;display: flex;flex-flow:row nowrap;justify-content: space-between;margin: 0 auto;padding:0;}
 header .menu li {position: relative;display: inline-block; box-sizing:border-box;line-height:60px;padding:0 29px;font-size: 12px;border-left: 1px solid black;border-right: 1px solid black;}
 header .menu li .submenu{display:none;position:absolute;left:0;top:60px;z-index: 100}
 header .menu li:hover {background-color: #FC4207;}

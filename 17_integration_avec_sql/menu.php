@@ -15,7 +15,7 @@
         mysqli_query($link, 'UPDATE `menu` SET `position`="'.$_POST['position'].'", `name`="'.$_POST['edit'].'" WHERE `id`='.$_POST['id']);
     }
     //selection et affichage d'éléments de la BDD
-    $resultat = mysqli_query($link, 'SELECT * FROM `menu` ORDER BY `position`, `name`');
+    $resultat = mysqli_query($link, 'SELECT * FROM `menu` ORDER BY `position` DESC, `name`');
     while($data = mysqli_fetch_assoc($resultat)){ // tant que tu reçois des données tu les affiches
         $id = $data['id'];
         $position = $data['position'];

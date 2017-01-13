@@ -266,10 +266,19 @@
                         </form>
                         <div class="list">
                         <?php
-                            $resultat = mysqli_query($mysqli, 'SELECT * FROM `product` ORDER BY `id` LIMIT 9');
+                            // affichage des produit sur 1 ou plusieurs pages.
+                            // LIMIT 5 -- 5 premiers résultats
+                            // LIMIT 5,10 --remonte les résultats 6 à 15. 5 est l'offset
+                            if(isset($_GET['page']) && $_GET['page'] != ''){ // && $_GET['page'] is a number ...
+                                $limit1 = 9 * ($_GET['page'] - 1);
+                            }else{
+                                $limit1 = 0;
+                            }
+                            $limit2 = 9;
+                            $resultat = mysqli_query($mysqli, 'SELECT * FROM `product` ORDER BY `id` LIMIT '.$limit1.', '.$limit2);
                             $li = "";
                             $i = 0;
-                            while($data = mysqli_fetch_assoc($resultat)){ // tant que tu reçois des données tu les affiches
+                            while($data = mysqli_fetch_assoc($resultat)){ 
                                 $id = $data['id'];
                                 $name = $data['name'];
                                 $price = $data['price'];
@@ -299,19 +308,29 @@
                             }
                         ?>
                         </div>
+                        <?php
+                        // pagination
+                        $resultat = mysqli_query($mysqli, 'SELECT COUNT(name) AS elementNumber FROM `product`');
+                        $data = mysqli_fetch_assoc($resultat);
+                        $elementNumber = $data['elementNumber']; // équivaut à $elementNumber = $data['COUNT(name)']; // sans le AS
+                        $pageNumber = ceil($elementNumber / 9); //arrondi supérieur
+                        ?>
                         <div class="pagination">
                               <div class="left">
                                     <div><a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>
-                                    <div class="num"><a href="#">1</a></div>
-                                    <div class="num"><a href="#">2</a></div>
-                                    <div class="num"><a href="#">3</a></div>
-                                    <div class="num"><a href="#">4</a></div>
-                                    <div class="num"><a href="#">5</a></div>
+                                <?php
+                                for ($i=1, $il=$pageNumber+1; $i < $il; $i++) { 
+                                ?>
+                                    <div class="num"><a href="?page=<?= $i ?>"><?= $i ?></a></div>
+                                <?php
+                                }
+                                ?>
                                     <div><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
                               </div>
                               <div class="right"><a href="#">more +</a></div>
                               <div class="clear"></div>
                         </div>
+
                   </div>
             </div>
       </div>

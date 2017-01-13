@@ -18,6 +18,14 @@ $data = mysqli_fetch_assoc($resultat);
         <input type="image" src="./img/edit.png">
     </form>
 </div>
+<!--<div>
+    <form  method="post" action="./admin.php?right=setText">
+        <span>Url image : <?=$data['image']?></span>
+        <input type="hidden" name="id" value="<?=$id?>">
+        <input type="hidden" name="attribut" value="image">
+        <input type="file" src="./img/edit.png">
+    </form>
+</div>-->
 <div>
     <form  method="post" action="./admin.php?right=setText">
         <span>Url image : <?=$data['image']?></span>

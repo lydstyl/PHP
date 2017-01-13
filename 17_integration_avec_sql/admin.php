@@ -7,8 +7,22 @@
 	</head>	
 	<body>	
         <div id="page">
-            <h1>ADMIN</h1>
+            <?php 
+                session_start();
+                //connexion BDD
+                $link = mysqli_connect("localhost","root", "", "gucci") or die("Impossible de se connecter : ".mysqli_error());
+                mysqli_query($link, 'SET NAMES UTF8');
+                $h1 = '';
+                if(isset($_SESSION['id'])){
+                    $resultat = mysqli_query($link, 'SELECT * FROM `user` WHERE `id`='.$_SESSION['id']);
+                    $data = mysqli_fetch_assoc($resultat);
+                    $h1 = $data['firstname'];
+                    $h1 = strtoupper($h1);
+                }
+            ?>
+            <h1>ADMIN <?=$h1?></h1>
             <ul class='menu left'>
+                <li><a href="./admin.php?right=user">User</a></li>
                 <li><a href="./admin.php?right=slider">Slider</a></li>
                 <li><a href="./admin.php?right=menu">Menu</a></li>
                 <li><a href="./admin.php?right=featured">Featured</a></li>
@@ -19,9 +33,6 @@
             </ul>
             <div class="right">
                 <?php
-                    //connexion BDD
-                    $link = mysqli_connect("localhost","root", "", "gucci") or die("Impossible de se connecter : ".mysqli_error());
-                    mysqli_query($link, 'SET NAMES UTF8');
                     if (isset($_GET['right']) && $_GET['right'] != ''){
                         switch ($_GET['right']) {
                             case 'slider':
@@ -33,6 +44,7 @@
                             case 'setText':
                             case 'featured':
                             case 'setfeatured':
+                            case 'user':
                                 //inclusion
                                 include('./'.$_GET['right'].'.php');
                                 break;
@@ -47,6 +59,8 @@
                     mysqli_close($link); 
                 ?>
             </div>
+            <div class="clear"></div>
+            <a href="index.php">Retour au site</a>
         </div>
 	</body>
 </html>

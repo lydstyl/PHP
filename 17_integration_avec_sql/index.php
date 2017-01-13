@@ -32,21 +32,7 @@
               <li>
                     <?php
                         $hrefAdmin = '#';
-                        if(isset($_SESSION['id'])){ // si session avec id de l'user
-                            if(isset($_GET['logout'])){ // si demande de déconnexion
-                                //session_start();
-                                //unset($_SESSION["nome"]);  // where $_SESSION["nome"] is your own variable. if you do not have one use only this as follow **session_unset();**
-                                session_unset();
-                                header("Location: index.php");
-                            }else{ // sinon on se connecte via l'id du user
-                                $resultat = mysqli_query($mysqli, 'SELECT * FROM user WHERE `id`='.$_SESSION['id']);
-                                $data = mysqli_fetch_assoc($resultat);
-                                $firstname = $data['firstname'];
-                                if($data['is_admin']){
-                                    $hrefAdmin = './admin.php'; // le lien menera vers admin.php
-                                }
-                            }
-                        }else if(isset($_POST['mail']) && $_POST['mail'] !=''){ // si pas d'id user mais une demande de connexion via login = email                      
+                        if(isset($_POST['mail']) && $_POST['mail'] !=''){ // si pas d'id user mais une demande de connexion via login = email                      
                             $resultat = mysqli_query($mysqli, 'SELECT * FROM user WHERE `mail`="'.$_POST['mail'].'"');
                             $data = mysqli_fetch_assoc($resultat);
                             if($data['mail'] != $_POST['mail']){ // si email non reconnu
@@ -61,13 +47,27 @@
                                         $hrefAdmin = './admin.php'; // le lien menera vers admin.php
                                     }                                    
                                     $_SESSION['id'] = $data['id']; // Sauvegarde en session de l'id de l'utilisateur
+                                }   
+                            }
+                        }else if(isset($_SESSION['id'])){ // si session avec id de l'user
+                            if(isset($_GET['logout'])){ // si demande de déconnexion
+                                //session_start();
+                                //unset($_SESSION["nome"]);  // where $_SESSION["nome"] is your own variable. if you do not have one use only this as follow **session_unset();**
+                                session_unset();
+                                header("Location: index.php");
+                            }else{ // sinon on se connecte via l'id du user
+                                $resultat = mysqli_query($mysqli, 'SELECT * FROM user WHERE `id`='.$_SESSION['id']);
+                                $data = mysqli_fetch_assoc($resultat);
+                                $firstname = $data['firstname'];
+                                if($data['is_admin']){
+                                    $hrefAdmin = './admin.php'; // le lien menera vers admin.php
                                 }
                             }
                         }else{ // sinon par default on est pas connecté
                             $firstname = "Non connecté";
                         }
                     ?>
-                    <a target="_blank" href="<?= $hrefAdmin ?>">
+                    <a href="<?= $hrefAdmin ?>">
                         <span>Good Evening,</span>
                         <!--<span> <?php print_r($_SESSION) ?></span>-->
                         <span> <?= $firstname ?></span>
@@ -85,6 +85,7 @@
                         <div><span>Password : </span><input type="password" placeholder="password" name="password"></div>
                         <input type="submit" value="login">
                     </form>
+                    <a href="?logout">logout</a>
                 </div>
               </li>
             </ul>

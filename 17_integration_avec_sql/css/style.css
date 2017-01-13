@@ -15,9 +15,15 @@ header .firstBar li{display: inline-block;min-width:40px;height: 50px;line-heigh
 header .firstBar span:first-child{color:red}
 header .firstBar span:last-child{color:white}
 header .firstBar li:last-child{position: relative}
-header .firstBar li:last-child .login{position:absolute;z-index:10;display: none; width: 220px;padding:10px;bottom:-177px;left:-181px;background-color: #433131;color:grey;text-align: right}
+
+/*.login form:first-child{login
+.login form:last-child{logout*/
+
+header .firstBar li:last-child .login{position:absolute;z-index:10;display: none; width: 220px;padding:10px;bottom:-161px;left:-181px;background-color: #433131;color:grey;text-align: right}
+header .firstBar li:last-child .login form{line-height: 30px;}
 header .firstBar li:last-child .login div{width: auto;}
 header .firstBar li:last-child .login span{color:white}
+header .firstBar li:last-child .login input {line-height : 20px;}
 header .firstBar li:last-child .login div input {height: 25px;}
 header .firstBar li:last-child:hover .login{display: block}
 header .firstBar li:hover{background-color: #EE3E02;color:white}

@@ -2,7 +2,7 @@
 <?php
     print_r($_POST);
     // supprimer
-    if(isset($_POST['type']) && $_POST['type'] == 'supprimer')){
+    if(isset($_POST['type']) && $_POST['type'] == 'supprimer'){
         mysqli_query($link, 'DELETE FROM `user` WHERE `id`='.$_POST['id']);
     }
     if(isset($_POST['add']) && $_POST['mail'] != '' && $_POST['pass'] != ''){

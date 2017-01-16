@@ -32,7 +32,19 @@
               <li>
                     <?php
                         $hrefAdmin = '#';
-                        if(isset($_POST['mail']) && $_POST['mail'] !=''){ // si pas d'id user mais une demande de connexion via login = email                      
+                        //print_r($_POST);
+                        if(isset($_POST['initpassword']) && isset($_POST['mail']) && $_POST['mail'] != ''){
+                            // génération du nouveau password
+                            $md5 = md5(time());
+                            $pass = substr($md5, 0, 6); // à partir du premier caractère retourne 6 caractères
+                            $message = "Votre nouveau mot de passe est : ".$pass." http://localhost/PHP/17_integration_avec_sql/index.php";
+                            //enregistrement dans la BDD du nouveau mot de passe
+                            $hashedPass = md5($pass);
+                            mysqli_query($mysqli, 'UPDATE `user` SET `password`="'.$hashedPass.'" WHERE `mail`="'.$_POST['mail'].'"');
+                            // email du password                          
+                            mail($_POST['mail'], 'Votre nouveau mot de passe', $message);
+                            echo "Nouveau password envoyé";
+                        }else if(isset($_POST['mail']) && $_POST['mail'] !=''){ // si pas d'id user mais une demande de connexion via login = email                      
                             $resultat = mysqli_query($mysqli, 'SELECT * FROM user WHERE `mail`="'.$_POST['mail'].'"');
                             $data = mysqli_fetch_assoc($resultat);
                             if($data['mail'] != $_POST['mail']){ // si email non reconnu
@@ -83,6 +95,7 @@
                     <form method="post" action="#">
                         <div><span>E-mail : </span><input type="text" placeholder="votre@email.xxx" name="mail"></div>
                         <div><span>Password : </span><input type="password" placeholder="password" name="password"></div>
+                        <a href="./initPassword.php">Mot de passe oublié</a>
                         <input type="submit" value="login">
                     </form>
                     <a href="?logout">logout</a>

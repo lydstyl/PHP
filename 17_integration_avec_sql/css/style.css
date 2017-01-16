@@ -119,6 +119,16 @@ header .submenu .column li:hover {background-color: #433131;color:#FC4207}
 .middle .pagination .num:hover:before{content: "";position:absolute;left:-1px;top:-8px;display:block;border-bottom:7px solid #E64100;border-left:12px solid rgba(0,0,0,0);border-right:12px solid rgba(0,0,0,0);}
 .middle .pagination .right{width: 52px;float:right}
 .middle .pagination .clear{width: 0;height: 0;border:none}
+
+.middle .productDetail{width: 500px;margin:auto;text-align: center}
+.middle .productDetail h4{line-height: 60px; font-size: 18px}
+.middle .productDetail .imgBox{width: 500px;height: 500px;margin-bottom:22px;border:1px solid grey}
+.middle .productDetail .imgBox img{width: 100%;height: 100%;}
+.middle .productDetail form{margin-bottom: 12px;}
+.middle .productDetail form input{color:black}
+.middle .productDetail a{color:#EB3F00}
+.middle .productDetail a:hover{font-weight: bold}
+
 footer{background-color: #453333;color:white}
 footer .centerBox{width: 992px;height: 80px;line-height:80px;margin:0 auto;}
 footer .centerBox ul{width: 640px;float:left;padding:0;font-size: 0;}

@@ -123,7 +123,8 @@
                         <div><span>Password : </span><input type="password" placeholder="password" name="password"></div>
                         <a href="./initPassword.php">Mot de passe oublié</a>
                         <input type="submit" value="login">
-                    </form>
+                    </form>                    
+                    <a href="./signIn.php">Sign in</a><span> / </span>
                     <a href="?logout">logout</a>
                 </div>
               </li>

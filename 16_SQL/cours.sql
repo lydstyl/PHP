@@ -6,8 +6,8 @@ SELECT * FROM `User` ORDER BY `nom`;
 SELECT * FROM `User` ORDER BY `id` DESC;
 SELECT * FROM `User` WHERE `prenom`="Mathieu" ORDER BY `nom` DESC;
 -- INSERTION
-INSERT INTO `User` VALUES(5, `bbb`,``,`toto@live.fr`);
-INSERT INTO `User`(`id`,`nom`,`email`) VALUES(6, `bbb`,``,`toto@live.fr`),(7,`ddd`,`ddd@live.fr`);
+INSERT INTO `User` VALUES(5, 'bbb','','toto@live.fr');
+INSERT INTO `User`(`id`,`nom`,`email`) VALUES(6, 'bbb','','toto@live.fr'),(7,'ddd','ddd@live.fr');
 INSERT INTO `User` SET `id`="1",`nom`="Dabir",`prenom`="Maurice";
 /*SUPRESSION DE DONNEES*/
 DELETE FROM `User` WHERE `prenom`='Mathieu';

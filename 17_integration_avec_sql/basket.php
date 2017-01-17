@@ -13,14 +13,15 @@
                 // connexion BDD
                 $link = mysqli_connect("localhost","root", "", "gucci") or die("Impossible de se connecter : ".mysqli_error());
                 mysqli_query($link, 'SET NAMES UTF8');
+                // supprimer un produit du panier
+                if(isset($_POST['supprimer'])){
+                    unset($_SESSION['basket'][$_POST['supprimer']]);
+                }
                 // affichage des produits du panier
-                if(isset($_SESSION['basket'])){
-                    // echo '<pre>';
-                    // print_r($_SESSION['basket']);
-                    // echo '</pre>';
+                if(isset($_SESSION['basket']) && count($_SESSION['basket'])>0){
                     $where = array();
                     foreach ($_SESSION['basket'] as $key => $value){
-                        $where[] = '`id`="'.$key.'"';
+                        $where[] = '`id`="'.$key.'"'; // équivaut à un array_push
                     }
                     $request = 'SELECT * FROM `product` WHERE '.implode($where, ' OR ');
                     //echo $request;
@@ -35,6 +36,7 @@
                             <span> $<?=$data['price']?></span>
                             <span> qty : <?=$qty?></span>
                             <span> total line : <?=$qty  * $data['price']?></span>
+                            <form action="basket.php" method="post"><input type="hidden" name="supprimer" value="<?=$data['id']?>"><input type="submit" value="supprimer"></form>
                         </div>                        
             <?php 
                     }

@@ -102,9 +102,17 @@
                             }
                         }
                             //print_r($_SESSION);
+                        $basket = '(vide)';
+                        if(isset($_SESSION['basket'])){
+                            $basket = 0;
+                            foreach ($_SESSION['basket'] as $key => $value){
+                                $basket += $value;
+                            }
+                        }
                     ?>
                     <a href="basket.php">
                         <i class="fa fa-shopping-basket"></i>
+                        <?= $basket ?>
                     </a>
               </li>
               <li>

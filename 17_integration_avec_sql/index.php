@@ -17,6 +17,7 @@
     <?php 
         session_start();
         //session_destroy();
+        include_once('./include/function.curPageURL.php');
         //connexion BDD
         $mysqli = mysqli_connect("localhost","root", "", "gucci") or die(
             "Impossible de se connecter : ".mysqli_error()
@@ -174,7 +175,8 @@
                     $idMenu = $data['id'];
                     $menuName = $data['name'];
                     $li .=  "  
-                                <li>".$menuName."
+                
+                                <li><a href='?categorie=".$menuName."'>".$menuName."</a>
                                     <ul class='submenu'>
                                         <div class='topBar'></div>
                             ";
@@ -232,7 +234,7 @@
                             ?>
                                 <div class="col-md-3">
                                     <img src="<?= $data['image'] ?>" alt="img">
-                                    <div><a href="#"><?= $data['name'] ?></a></div>
+                                    <div><a href="?productId=<?= $data['id'] ?>"><?= $data['name'] ?></a></div>
                                 </div>
                             <?php
                             }
@@ -437,9 +439,14 @@
                   <div class="clear"></div>
             </div>
             <div class="lastBar"></div>
+
+    <?php     
+        curPageURL();
+    ?>
+
       </footer>
     </div>
-    <?php mysqli_close($mysqli); ?>
+     <?php mysqli_close($mysqli); ?>
 
       <script type="text/javascript" src="../static/js/jquery.js"></script>
       <script type="text/javascript"></script>

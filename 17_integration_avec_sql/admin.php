@@ -22,28 +22,30 @@
             ?>
             <h1>ADMIN <?=$h1?></h1>
             <ul class='menu left'>
-                <li><a href="./admin.php?right=user">User</a></li>
-                <li><a href="./admin.php?right=slider">Slider</a></li>
-                <li><a href="./admin.php?right=menu">Menu</a></li>
+                <li><a href="./admin.php?right=categorie">Categorie</a></li>
                 <li><a href="./admin.php?right=featured">Featured</a></li>
+                <li><a href="./admin?right=pagination.php">Liste produit + pagination</a></li>
+                <li><a href="./admin.php?right=menu">Menu</a></li>
+                <li><a href="./admin.php?right=bottomMenu">Menu du bas</a></li>
+                <li><a href="./admin.php?right=slider">Slider</a></li>
+                <li><a href="./admin.php?right=user">User</a></li>
                 <li><a href="./admin.php?right=popular">Popular</a></li>
                 <li><a href="./admin.php?right=product">Produit</a></li>
-                <li><a href="./admin?right=pagination.php">Liste produit + pagination</a></li>
-                <li><a href="./admin.php?right=bottomMenu">Menu du bas</a></li>
             </ul>
             <div class="right">
                 <?php
                     if (isset($_GET['right']) && $_GET['right'] != ''){
                         switch ($_GET['right']) {
-                            case 'slider':
-                            case 'setSliderImg':
-                            case 'menu':
-                            case 'setMenu':
-                            case 'product':
-                            case 'setProduct':
-                            case 'setText':
+                            case 'categorie':
                             case 'featured':
+                            case 'menu':
+                            case 'product':
+                            case 'slider':
+                            case 'setMenu':
                             case 'setfeatured':
+                            case 'setProduct':
+                            case 'setSliderImg':
+                            case 'setText':
                             case 'user':
                                 //inclusion
                                 include('./'.$_GET['right'].'.php');

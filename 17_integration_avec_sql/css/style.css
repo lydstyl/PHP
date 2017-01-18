@@ -15,10 +15,6 @@ header .firstBar li{display: inline-block;min-width:40px;height: 50px;line-heigh
 header .firstBar span:first-child{color:red}
 header .firstBar span:last-child{color:white}
 header .firstBar li:last-child{position: relative}
-
-/*.login form:first-child{login
-.login form:last-child{logout*/
-
 header .firstBar li:last-child .login{position:absolute;z-index:10;display: none; width: 220px;padding:10px;bottom:-161px;left:-181px;background-color: #433131;color:grey;text-align: right}
 header .firstBar li:last-child .login form{line-height: 30px;}
 header .firstBar li:last-child .login div{width: auto;}
@@ -38,7 +34,6 @@ header .slick-prev {left: 20px;z-index: 100}
 header .slick-prev:before, .slick-next:before {color: #6C5756;}
 header .slick-prev:hover:before, .slick-next:hover:before {color: #EA4912;}
 header .menu {background-color: #433131;color:#FAF9F4}
-/*header .menu ul {width: 992px;margin: 0 auto;padding:0;font-size: 0;}*/
 header .menu ul {width: 992px;display: flex;flex-flow:row nowrap;justify-content: space-between;margin: 0 auto;padding:0;}
 header .menu li {position: relative;display: inline-block; box-sizing:border-box;line-height:60px;padding:0 29px;font-size: 12px;border-left: 1px solid black;border-right: 1px solid black;}
 header .menu li .submenu{display:none;position:absolute;left:0;top:60px;z-index: 100}
@@ -75,7 +70,6 @@ header .submenu .column li:hover {background-color: #433131;color:#FC4207}
 .middle .centerBox .colRight form{color:#C4C4BA}
 .middle .colLeft .arrow{height: 52px;line-height:52px;margin-bottom:10px;padding:0 10px;background-image: url("../img/arrow.png")}
 .middle .colLeft .arrow a{color:#251D1B}
-/*.middle .colLeft .arrow a:focus{text-decoration: none}*/
 .middle .colLeft .arrow span:last-child{float:right;font-size: 16px;color:white}
 .middle .colLeft .arrow:hover{background-image: url("../img/arrow-hover.png");color:white}
 .middle .store{height: 72px;margin-bottom:10px;background-image: url("../img/store.png");color:white;font-size: 0;}
@@ -119,7 +113,6 @@ header .submenu .column li:hover {background-color: #433131;color:#FC4207}
 .middle .pagination .num:hover:before{content: "";position:absolute;left:-1px;top:-8px;display:block;border-bottom:7px solid #E64100;border-left:12px solid rgba(0,0,0,0);border-right:12px solid rgba(0,0,0,0);}
 .middle .pagination .right{width: 52px;float:right}
 .middle .pagination .clear{width: 0;height: 0;border:none}
-
 .middle .productDetail{width: 500px;margin:auto;text-align: center}
 .middle .productDetail h4{line-height: 60px; font-size: 18px}
 .middle .productDetail .imgBox{width: 500px;height: 500px;margin-bottom:22px;border:1px solid grey}
@@ -128,7 +121,6 @@ header .submenu .column li:hover {background-color: #433131;color:#FC4207}
 .middle .productDetail form input{color:black}
 .middle .productDetail a{color:#EB3F00}
 .middle .productDetail a:hover{font-weight: bold}
-
 footer{background-color: #453333;color:white}
 footer .centerBox{width: 992px;height: 80px;line-height:80px;margin:0 auto;}
 footer .centerBox ul{width: 640px;float:left;padding:0;font-size: 0;}

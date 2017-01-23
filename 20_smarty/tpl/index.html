@@ -1,0 +1,18 @@
+- <strong>{$ma_variable}</strong> <br />
+- {$une_variable} <br />
+- {$une_autre_variable} <br />
+- {$smarty.server.SERVER_NAME} <br />
+<!--{foreach from=$liste_matiere item=v key=k}
+    {$k} : {$v} <br />
+{/foreach}-->
+{foreach from=$liste_matiere item=matiere}
+    {$matiere} est une matière <br />
+{/foreach}
+{literal}
+    <script language=javascript>
+        function dire(valeur){
+            alert(valeur);
+        }
+        alert("ococo");
+    </script>
+{/literal}

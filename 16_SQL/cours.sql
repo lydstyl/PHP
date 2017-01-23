@@ -28,3 +28,12 @@ LIMIT 5,10 --remonte les résultats 6 à 15. 5 est l'offset
 UPDATE `user` SET `nom`='eeee', `prenom`='eee' WHERE `id`='1'
 -- DELETE
 DELETE FROM `user` WHERE `id`=2
+-- JOINTURE
+/*  Table user --> id, nom, prenom
+    Table adress --> id, user, ville, cp, rue, numéro */
+SELECT * FROM `user` AS us LEFT JOIN `adress` AS ad ON us.id = ad.user
+SELECT us.nom, ad.cp FROM `user` AS us LEFT JOIN `adress` AS ad ON us.id = ad.user
+/*  LEFT contrainte table user
+    RIGHT contrainte table adress
+    INNER comme requète sur plusieurs table
+    FULL --> pas compatible avec tout */

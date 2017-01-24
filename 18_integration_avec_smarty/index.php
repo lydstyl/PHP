@@ -59,7 +59,7 @@
                                     $firstname = $data['firstname'];
                                     if($data['is_admin']){
                                         //$hrefAdmin = './admin.php'; // le lien menera vers admin.php
-                                        $hrefAdmin = './admin/controller/admin.php?page=menuHaut2'; // le lien menera vers admin.php
+                                        $hrefAdmin = './admin/controller/admin.php?page=menuHaut'; // le lien menera vers admin.php
                                     }                                    
                                     $_SESSION['id'] = $data['id']; // Sauvegarde en session de l'id de l'utilisateur
                                 }   
@@ -73,7 +73,7 @@
                                 $data = mysqli_fetch_assoc($resultat);
                                 $firstname = $data['firstname'];
                                 if($data['is_admin']){
-                                    $hrefAdmin = './admin/controller/admin.php?page=menuHaut2'; // le lien menera vers admin.php
+                                    $hrefAdmin = './admin/controller/admin.php?page=menuHaut'; // le lien menera vers admin.php
                                 }
                             }
                         }else{ // sinon par default on est pas connecté
@@ -421,7 +421,14 @@
       <footer>
             <div class="centerBox">
                   <ul>
-                        <li><a href="#">Blog</a></li>
+                      <?php
+$resultat = mysqli_query($mysqli, 'SELECT * FROM `menu_bas` ORDER BY `position`, `name`');
+while($data = mysqli_fetch_assoc($resultat)){
+    echo "<li><a href='#'>".$data['name']."</a></li>";
+}
+
+                      ?>
+                        <!--<li><a href="#">Blog</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><a href="#">Press</a></li>
@@ -429,7 +436,7 @@
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Terms</a></li>
                         <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Copyright</a></li>
+                        <li><a href="#">Copyright</a></li>-->
                   </ul>
                   <div class="right">
                         <div>Connect with us</div>

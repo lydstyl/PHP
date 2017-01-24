@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 23 Janvier 2017 à 10:04
+-- Généré le :  Mar 24 Janvier 2017 à 14:20
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -59,12 +59,40 @@ CREATE TABLE `menu` (
 
 INSERT INTO `menu` (`id`, `position`, `name`) VALUES
 (25, 1, 'Men'),
+(69, 3, 'jojo'),
 (22, 3, 'Kids'),
 (13, 2, 'Women'),
 (17, 4, 'Cats and Dogs'),
 (37, 5, 'Monkey'),
 (39, 6, 'Birds'),
 (44, 3, 'Cow');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `menu_bas`
+--
+
+CREATE TABLE `menu_bas` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `position` tinyint(4) NOT NULL DEFAULT '0',
+  `name` varchar(255) NOT NULL DEFAULT 'menu_name'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `menu_bas`
+--
+
+INSERT INTO `menu_bas` (`id`, `position`, `name`) VALUES
+(1, 2, 'Blog'),
+(2, 1, 'About'),
+(3, 1, 'Contact'),
+(4, 1, 'Developers'),
+(5, 1, 'Careers'),
+(6, 1, 'Terms'),
+(7, 1, 'Privacy'),
+(8, 1, 'Copyright'),
+(9, 6, 'cyril');
 
 -- --------------------------------------------------------
 
@@ -198,6 +226,12 @@ ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `menu_bas`
+--
+ALTER TABLE `menu_bas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `product`
 --
 ALTER TABLE `product`
@@ -235,7 +269,12 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+--
+-- AUTO_INCREMENT pour la table `menu_bas`
+--
+ALTER TABLE `menu_bas`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT pour la table `product`
 --

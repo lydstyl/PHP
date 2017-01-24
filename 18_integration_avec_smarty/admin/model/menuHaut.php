@@ -1,6 +1,4 @@
 <?php
-    require('../model/loadingSmarty.php'); // chargement de Smarty require --> envoi une erreure contrairement à include
-    require('../model/connect.php'); // connexion bdd
     // Ajout d'un nouveau menu
     if(isset($_POST['type']) && $_POST['type'] == 'ajouter'){
         mysqli_query($link, 'INSERT INTO `menu` SET `name`="ajout"');
@@ -23,7 +21,5 @@
         $menu['name'] = $data['name'];
         array_push($assignTable, $menu);
     }
-    require('../model/disconnect.php'); // déconnexion bdd
     $smarty->assign("menu", $assignTable);
-    // display
-    $smarty->display('../../tpl/menuHaut2.html');
+    $smarty->display('../../tpl/menuHaut.html');

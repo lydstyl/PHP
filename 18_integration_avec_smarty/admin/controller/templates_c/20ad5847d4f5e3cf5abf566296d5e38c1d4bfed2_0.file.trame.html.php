@@ -1,27 +1,26 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-01-24 09:53:35
+/* Smarty version 3.1.30, created on 2017-01-24 16:05:15
   from "C:\wamp64\www\PHP\18_integration_avec_smarty\tpl\trame.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5887241f61e709_41945247',
+  'unifunc' => 'content_58877b3bb74d01_96539949',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '20ad5847d4f5e3cf5abf566296d5e38c1d4bfed2' => 
     array (
       0 => 'C:\\wamp64\\www\\PHP\\18_integration_avec_smarty\\tpl\\trame.html',
-      1 => 1485251599,
+      1 => 1485273913,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:./menu.html' => 1,
   ),
 ),false)) {
-function content_5887241f61e709_41945247 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58877b3bb74d01_96539949 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -36,14 +35,13 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         <div id="page">
             <h1>ADMIN</h1>
             <ul class="menu left">
-                <?php $_smarty_tpl->_subTemplateRender("file:./menu.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
+                <li><a href="./admin.php?page=menuHaut">Menu du haut</a></li>
+                <li><a href="./admin.php?page=menuBas">Menu du bas</a></li>
             </ul>
             <div class="right">
                 <!--c'est ici que ça change en fonction de l'url-->
                 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6835887241f61a886_70023120', 'contenu');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2676058877b3bb74d06_19702270', 'contenu');
 ?>
 
             </div>
@@ -53,7 +51,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6835887241f61a886_
 	</body>
 </html><?php }
 /* {block 'contenu'} */
-class Block_6835887241f61a886_70023120 extends Smarty_Internal_Block
+class Block_2676058877b3bb74d06_19702270 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

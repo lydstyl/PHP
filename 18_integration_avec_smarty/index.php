@@ -58,7 +58,8 @@
                                 }else{ // Le pass est bon;
                                     $firstname = $data['firstname'];
                                     if($data['is_admin']){
-                                        $hrefAdmin = './admin.php'; // le lien menera vers admin.php
+                                        //$hrefAdmin = './admin.php'; // le lien menera vers admin.php
+                                        $hrefAdmin = './admin/controller/admin.php?page=menuHaut2'; // le lien menera vers admin.php
                                     }                                    
                                     $_SESSION['id'] = $data['id']; // Sauvegarde en session de l'id de l'utilisateur
                                 }   
@@ -72,7 +73,7 @@
                                 $data = mysqli_fetch_assoc($resultat);
                                 $firstname = $data['firstname'];
                                 if($data['is_admin']){
-                                    $hrefAdmin = './admin.php'; // le lien menera vers admin.php
+                                    $hrefAdmin = './admin/controller/admin.php?page=menuHaut2'; // le lien menera vers admin.php
                                 }
                             }
                         }else{ // sinon par default on est pas connecté

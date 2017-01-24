@@ -1,0 +1,13 @@
+{extends file="./trame.html"}
+{block name=contenu}
+    {section name=outer
+    loop=$FirstName}
+        {if $smarty.section.outer.index is odd by 2}
+            {$smarty.section.outer.rownum} . {$FirstName[outer]} {$LastName[outer]}
+        {else}
+            {$smarty.section.outer.rownum} * {$FirstName[outer]} {$LastName[outer]}
+        {/if}
+        {sectionelse}
+        none
+    {/section}
+{/block}

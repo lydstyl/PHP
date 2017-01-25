@@ -1,6 +1,6 @@
 <?php
     // affichage du msg à la suite
-    if(isset($_POST['message'])){
+    if(isset($_POST['message']) && $_POST['message'] != ''){
         //récupération des valeurs post ajax
         $user = $_POST['user'];
         $msg = $_POST['message'];
@@ -23,6 +23,4 @@
         // stockage msg + user
         $_POST['user'] == 'user1' ? $userBdd = 1 : $userBdd = 2;
         $bdd->query('INSERT INTO `chat` SET `user`="'.$userBdd.'",`msg`="'.$msg.'";');
-        // Termine le traitement de la requête
-        //$reponse->closeCursor(); 
     }

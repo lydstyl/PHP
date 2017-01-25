@@ -21,7 +21,7 @@
                         die('Erreur : ' . $e->getMessage());
                     }
                     // Si tout va bien, on peut continuer et afficher l'historique
-                    $reponse = $bdd->query('SELECT * FROM chat ORDER BY id LIMIT 10');
+                    $reponse = $bdd->query('SELECT * FROM chat ORDER BY id');
                     // On affiche chaque entrée une à une
                     while ($data = $reponse->fetch()){
                         if($data['user'] == '1'){

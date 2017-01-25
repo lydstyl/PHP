@@ -1,0 +1,13 @@
+$(function(){
+    $('input').click(function(){
+        $.ajax({
+            method:'GET',
+            data:{name:'John'},
+            url:'ajax.php',
+            dataType:'html',
+            success:function(reponse){
+                alert(reponse);
+            }
+        })
+    })
+});

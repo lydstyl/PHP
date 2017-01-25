@@ -13,13 +13,6 @@
         $msgLine .= $user.': '.$msg;
         $msgLine .= '</div>';
         echo $msgLine;
-        // connexion bdd
-        // try{
-        //     $bdd = new PDO('mysql:host=localhost;dbname=chat;charset=utf8', 'root', '');
-        // }
-        // catch (Exception $e){
-        //     die('Erreur : ' . $e->getMessage());
-        // }
         require('connect.php');
         // stockage msg + user
         $_POST['user'] == 'user1' ? $userBdd = 1 : $userBdd = 2;

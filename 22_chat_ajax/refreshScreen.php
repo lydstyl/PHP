@@ -1,11 +1,4 @@
 <?php
-    //connexion bdd
-    // try{
-    //     $bdd = new PDO('mysql:host=localhost;dbname=chat;charset=utf8', 'root', '');
-    // }
-    // catch (Exception $e){
-    //     die('Erreur : ' . $e->getMessage());
-    // }
     require('connect.php');
     // Si tout va bien, on peut continuer et afficher l'historique
     $reponse = $bdd->query('SELECT * FROM chat ORDER BY id');

@@ -23,11 +23,9 @@ $(function(){
                 url:'chat.php',
                 dataType:'html',
                 success:function(reponse){
-                    //$('.screen').append(reponse + '<br />');
-                    //$(".screen").get(0).scrollTop = $(".screen").get(0).scrollHeight;
+                    // pas besoin d'injecter le nouveau msg dans .screen car c'est fait toutes les x secondes
                 }
             })
         })
-    //$('#page').hide();
     }
 });

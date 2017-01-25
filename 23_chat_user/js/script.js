@@ -15,15 +15,18 @@ $(function(){
         }, 1000);
         // à l'ajout d'un nouveau message, celui-ci est envoyé en bdd via ajax
         $('input:nth-child(2), input:nth-child(3)').click(function(event){
-            var user = event.target.value;
+            //alert ($('input:nth-child(2), input:nth-child(3)'));
+            //var user = event.target.value;
             var message = $('input:nth-child(1)').val();
+            alert(message);
             $.post({
                 method:'POST',
-                data:{user:user,message:message},
+                data:{message:message},
                 url:'chat.php',
                 dataType:'html',
                 success:function(reponse){
                     // pas besoin d'injecter le nouveau msg dans .screen car c'est fait toutes les x secondes
+                    //alert(reponse);
                 }
             })
         })

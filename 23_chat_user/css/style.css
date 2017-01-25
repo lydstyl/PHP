@@ -1,0 +1,8 @@
+#page{max-width: 600px;margin: auto;}
+h1{text-align: center}
+.left{float:left;background-color:yellow;}
+.right{float:right;background-color:red;}
+.clear{clear:both; max-width: 80%; margin: 10px;padding: 10px;word-wrap: break-word;border-radius: 10px}
+.screen{max-width: 290px;height:320px;margin: 14px auto;overflow: auto;border:2px solid black;border-radius: 10px}
+form{max-width:320px;margin:auto;text-align: center}
+input:nth-child(1){display: inline-block;width: 91%;margin: 10px;}

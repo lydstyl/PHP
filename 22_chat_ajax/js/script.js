@@ -12,5 +12,4 @@ $(function(){
             }
         })
     })
-    //$('.clear:contains("user1")').css('background','red')
 });

@@ -1,0 +1,25 @@
+{extends file="./trame.html"}
+{block name=contenu}
+    <h2>Menu</h2>
+    {section name=sec1 loop=$menu}            
+        <div>
+            <form method="post" action="./admin.php?page=menuHaut">
+                <input type="hidden" name="id" value="{$menu[sec1].id}" />
+                <input type="hidden" name="type" value="editer" />
+                <input type="number" name="position" min="1" max="20" value="{$menu[sec1].position}" />
+                <input type="text" name="name" value="{$menu[sec1].name}" />
+                <input type="image" src="../../img/edit.png">
+            </form>
+            <form method="post" action="./admin.php?page=menuHaut">
+                <input type="hidden" name="id" value="{$menu[sec1].id}" />
+                <input type="hidden" name="type" value="supprimer" />
+                <input type="image" src="../../img/delete.png">
+            </form>
+        </div>
+    {/section}
+        <br>
+        <br>
+    <form method="post" action="./admin.php?page=menuHaut">
+        <input type="submit" name="type" value="ajouter">
+    </form> 
+{/block}

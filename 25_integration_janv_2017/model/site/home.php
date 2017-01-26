@@ -1,10 +1,10 @@
 <?php
-    $resultat = mysqli_query($link, 'SELECT * FROM `menu` ORDER BY `position` DESC, `name`');
+    $resultat = mysqli_query($link, 'SELECT * FROM `menu` ORDER BY `position`, `name`');
     $assignTable = [];
-    while($data = mysqli_fetch_assoc($resultat)){ // tant que tu reçois des données tu les affiches
+    while($data = mysqli_fetch_assoc($resultat)){
         array_push($assignTable,  array(
-            'id' => $data['id'],
-            'position' => $data['position'],
+            // 'id' => $data['id'],
+            'position' => $data['position'], //pas non plus besoin mais je le laisse pour l'exemple
             'name'=> $data['name']
         ) );
     }

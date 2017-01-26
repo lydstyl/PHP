@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Silicon</title>
+		<title>Integration janvier 2017 responsive</title>
 		<meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, user-scalable=no">
-        <link href="../../../static/css/normalize.css" rel="stylesheet" type="text/css" />
-        <link href="../../../static/css/foundation.css" rel="stylesheet" type="text/css" />
+        <!--<link href="../../../static/css/normalize.css" rel="stylesheet" type="text/css" />-->
+        <link href="../../css/static/css/foundation.css" rel="stylesheet" type="text/css" />
         <link href="../../css/style.css" rel="stylesheet" type="text/css" />
 	</head>	
 	<body>	
@@ -13,14 +13,13 @@
             <header>
                 <div class="degradeBox">
                     <div class="menuBox">
-                        <div class="left">                        
-                            <h1><a href="#">SiliconApp</a></h1>
-                            <div>a product by Software Company</div>                        
-                        </div>
-                        <div class="right">
+                            <h1 class="float-left"><a href="#">Design</a></h1>                      
+                        <!--<div class="float-left">                        
+                        </div>-->
+                        <div class="float-right">
                             <ul>
-                                {section name=sec1 loop=$menu}
-                                    <a href="#"><li>{$menu[sec1].name}</li></a>
+                                {section name=i loop=$menu}
+                                    <li><a href="#">{$menu[i].name|upper}</a></li>
                                 {/section}
                             </ul>
                         </div>
@@ -28,22 +27,7 @@
                     </div>
                 </div>
             </header>
-            <div class="imageBox"></div>
-            <div class="downloadBox">downloadBox</div>
-            <div class="descriptionBox">descriptionBox</div>
-            <footer>
-                <div class="left">
-                    <ul>
-                        {section name=sec1 loop=$menu}
-                            <a href="#"><li>{$menu[sec1].name}</li></a>
-                        {/section}
-                    </ul>
-                </div>
-                <div class="right">
-                    2009 Software Company. All rights reserved
-                </div>
-                <div class="clear"></div>
-            </footer>
+
         </div>
 	</body>
 </html>

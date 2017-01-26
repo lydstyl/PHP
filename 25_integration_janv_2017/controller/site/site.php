@@ -1,7 +1,6 @@
 <?php
-    require('../../model/admin/loadingSmarty.php'); // chargement de Smarty require --> envoi une erreure contrairement à include
-    require('../../model/admin/connect.php'); // connexion bdd
-    //chargement du model approprié
+    require('../../model/admin/loadingSmarty.php'); 
+    require('../../model/admin/connect.php'); 
     if (isset($_GET['page'])){
     switch ($_GET['page']) {
         case 'home':

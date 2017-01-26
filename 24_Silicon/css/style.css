@@ -1,5 +1,23 @@
-body{background-color: grey}
+body{margin: 0;background-color: grey;font-family: arial}
 #page{max-width: 1100px;margin:auto;background-color: #1C1C1C;color:white}
 .left{float:left}
 .right{float:right}
 .clear{clear:both}
+h1{margin:0;font-size: 34px}
+.degradeBox{background-image: url('../img/degrade.jpg')}
+.imageBox{height: 420px;background-image: url(../img/imgBox.jpg)}
+.menuBox, .downloadBox, .descriptionBox, footer{width: 885px;margin: auto;}
+.menuBox .left, .menuBox .right{margin-top:42px}
+.menuBox .left a{color:white; text-decoration: none}
+.menuBox .left div{padding-bottom:15px;color:grey;font-size: 12px}
+.menuBox .right ul{display: flex;flex-flow:row nowrap;justify-content: space-between;}
+.menuBox .right a{text-decoration: none;color: #1881EA;}
+.menuBox .right a:hover{color:white}
+.menuBox .right li{margin-left:40px;list-style-type: none}
+footer{margin-bottom:50px;background-color:black;border-radius:25px}
+footer li{display: inline-block;list-style-type: none;margin: 0 10px 0 0;}
+footer ul, footer .right{display:inline-block;margin: 4px 0;padding: 0;}
+footer a, footer .right{font-size:14px;color:#646770}
+footer a:hover{color:white}
+footer .left{margin-left:30px}
+footer .right{margin-right:30px}

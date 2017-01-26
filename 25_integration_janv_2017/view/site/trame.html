@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+	<head>
+		<title>admin</title>
+		<meta charset="utf-8" />
+        <link href="../../css/admin.css" rel="stylesheet" type="text/css" />
+	</head>	
+	<body>	
+        <div id="page">
+            <h1>ADMIN</h1>
+            <ul class="menu left">
+                <li><a href="./admin.php?page=menu">Menu</a></li>
+                <li><a href="./admin.php?page=autre">Autre</a></li>
+            </ul>
+            <div class="right">
+                <!--c'est ici que ça change en fonction de l'url-->
+                {block name=contenu}Cette page ne contient rien{/block}
+            </div>
+            <div class="clear"></div>
+            <a href="../../index.php">Retour au site</a>
+        </div>
+	</body>
+</html>

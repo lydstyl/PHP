@@ -4,15 +4,15 @@
     //chargement du model approprié
     if (isset($_GET['page'])){
     switch ($_GET['page']) {
-        case 'menuBas':
-        case 'menuHaut2':
+        case 'menu':
+        //case 'menuHaut2':
             include('../../model/admin/'.$_GET['page'].'.php');
             break;
         default:
-            include('../../model/admin/menuHaut.php');
+            include('../../model/admin/menu.php');
             break;
     }
     }else{
-            include('../../model/admin/menuHaut.php');
+            include('../../model/admin/menu.php');
     }
     require('../../model/admin/disconnect.php'); // déconnexion bdd

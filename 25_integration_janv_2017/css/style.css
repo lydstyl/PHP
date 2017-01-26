@@ -1,17 +1,22 @@
-body{margin:0}
-#page{max-width: 1000px;margin: auto;font-family: Georgia}
-h1{line-height: 120px;margin: 0 20px;}
+body{margin:0;background-color: #282828}
+#page{max-width: 1000px;margin: auto;font-family: Georgia;font-size: 12px;}
+h1{line-height: 120px;margin: 0 20px;font-size: 32px;}
 a{text-decoration: none}
 .float-left{float:left}
 .float-right{float:right}
 .clear{clear:both}
-header{min-height: 120px;background-color:#232425}
+header{min-height: 120px;background-color:#232425;font-size: 13px;}
 header a{color:#979797}
 header h1 a{color:white}
 header a:hover{color:white}
 header ul{display:inline-block;line-height: 120px;margin: 0;padding: 0;}
 header li{display: inline-block;padding: 0 20px;}
 header li:hover{background-color: #e2494b}
+
+
+
+footer{min-height: 60px;line-height:60px;background-color: #ecedee;color: #999;}
+footer span{margin: 0 20px;}
 
 @media print, screen and (max-width: 25em) {
     header ul{line-height: 40px}

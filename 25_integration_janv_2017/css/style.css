@@ -1,10 +1,14 @@
 body{margin:0;background-color: #282828}
 #page{max-width: 1000px;margin: auto;font-family: Georgia;font-size: 12px;}
 h1{line-height: 120px;margin: 0 20px;font-size: 32px;}
+h2{margin: 135px 0 0 0;line-height: 67px;font-size: 56px;font-weight: normal}
 a{text-decoration: none}
 .float-left{float:left}
 .float-right{float:right}
 .clear{clear:both}
+.button{background-color: #e2494b;border-radius: 8px;color: white;display: inline-block;font-size: 16px;line-height: 32px;margin: 20px 0 50px 0;width: 128px;}
+.clair{background-color: #f2f2f2}
+
 header{min-height: 120px;background-color:#232425;font-size: 13px;}
 header a{color:#979797}
 header h1 a{color:white}
@@ -13,7 +17,17 @@ header ul{display:inline-block;line-height: 120px;margin: 0;padding: 0;}
 header li{display: inline-block;padding: 0 20px;}
 header li:hover{background-color: #e2494b}
 
+.readBox{background: #1e1e1e;color:#666666}
+.readBox p{line-height: 22px;font-size: 16px}
+.readBox .columns a{display:block;width: 128px;height: 32px;line-height: 32px;margin: 30px 0 119px 0;background-color:#e2494b;border-radius: 8px;color:white;font-size: 16px;text-align: center}
+.readBox img{margin: 30px 0}
 
+.middle0{height: 10px;background-color: white}
+.middle1{background-color: #f2f2f2;text-align: center}
+.middle1 h3{margin: 50px 0 20px 0;font-size: 22px;color:#4a4a4a;font-weight: normal}
+.middle1 h3 span:last-child{color:#e1484b}
+.middle1 p{font-size: 13px;line-height: 21px;color:#999999}
+.clair .hr{border:1px solid #dadadc}
 
 footer{min-height: 60px;line-height:60px;background-color: #ecedee;color: #999;}
 footer span{margin: 0 20px;}

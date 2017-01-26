@@ -3,10 +3,10 @@
 	<head>
 		<title>Intégration janvier 2017</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-		<link href="css/normalize.css" rel="stylesheet" type="text/css" />
-		<link href="css/grille.css" rel="stylesheet" type="text/css" />
-		<link href="css/style.css" rel="stylesheet" type="text/css" />
+        <style>
+            body{margin:0}
+            #page{width:320px;margin:auto}
+        </style>
 	</head>	
 	<body>
 		<div id="page">
@@ -17,8 +17,6 @@
             <div>                
                 <a href="./controller/admin/admin.php?page=menu">Administrer le site</a>
             </div>
-		</div>		
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
+		</div>
 	</body>
 </html>

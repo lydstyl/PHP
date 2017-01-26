@@ -1,6 +1,6 @@
 <?php
-    require('../../model/admin/loadingSmarty.php'); // chargement de Smarty require --> envoi une erreure contrairement à include
-    require('../../model/admin/connect.php'); // connexion bdd
+    require('../../model/admin/loadingSmarty.php');
+    require('../../model/admin/connect.php');
     //chargement du model approprié
     if (isset($_GET['page'])){
     switch ($_GET['page']) {
@@ -15,4 +15,4 @@
     }else{
             include('../../model/admin/menu.php');
     }
-    require('../../model/admin/disconnect.php'); // déconnexion bdd
+    require('../../model/admin/disconnect.php');

@@ -7,30 +7,43 @@
 	</head>	
 	<body>	
         <div id="page">
-            <h1>Silicon home</h1>
+            <header>
+                <div class="menuBox">
 
-
-
-    {section name=sec1 loop=$menu}            
-        <div>
-            <form method="post" action="./admin.php?page=menu">
-                <input type="hidden" name="id" value="{$menu[sec1].id}" />
-                <input type="hidden" name="type" value="editer" />
-                <input type="number" name="position" min="1" max="20" value="{$menu[sec1].position}" />
-                <input type="text" name="name" value="{$menu[sec1].name}" />
-                <input type="image" src="../../img/edit.png">
-            </form>
-            <form method="post" action="./admin.php?page=menu">
-                <input type="hidden" name="id" value="{$menu[sec1].id}" />
-                <input type="hidden" name="type" value="supprimer" />
-                <input type="image" src="../../img/delete.png">
-            </form>
-        </div>
-    {/section}
-
-
-
-
+                    <div class="left">
+                        <a href="#">
+                            <h1>SiliconApp</h1>
+                            <div>a product by Software Company</div>
+                        </a>
+                    </div>
+                    <div class="right">
+                        <ul>
+                            {section name=sec1 loop=$menu}
+                                <a href="#"><li>{$menu[sec1].name}</li></a>
+                            {/section}
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </header>
+            <div class="imageBox">
+                imageBox
+            </div>
+            <div class="downloadBox">downloadBox</div>
+            <div class="descriptionBox">descriptionBox</div>
+            <footer>
+                <div class="left">
+                    <ul>
+                        {section name=sec1 loop=$menu}
+                            <a href="#"><li>{$menu[sec1].name}</li></a>
+                        {/section}
+                    </ul>
+                </div>
+                <div class="right">
+                    2009 Software Company. All rights reserved
+                </div>
+                <div class="clear"></div>
+            </footer>
         </div>
 	</body>
 </html>

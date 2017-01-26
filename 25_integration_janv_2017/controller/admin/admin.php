@@ -5,7 +5,7 @@
     if (isset($_GET['page'])){
     switch ($_GET['page']) {
         case 'menu':
-        //case 'menuHaut2':
+        case 'article':
             include('../../model/admin/'.$_GET['page'].'.php');
             break;
         default:

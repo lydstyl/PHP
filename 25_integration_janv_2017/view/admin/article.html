@@ -1,0 +1,26 @@
+{extends file="./trame.html"}
+{block name=contenu}
+    <h2>Article</h2>
+    <div>        
+        {section name=i loop=$menu}        
+            <form method="post" action="./admin.php?page=article">
+                <input type="hidden" name="type" value="editer" />
+                <input type="hidden" name="id" value="{$menu[i].id}" />
+                titre<input type="text" name="title" value="{$menu[i].title}" />
+                image<input type="text" name="image" value="{$menu[i].image}" />
+                paragraphe<input type="text" name="paragraphe" value="{$menu[i].paragraphe}" />
+                <input type="image" src="../../img/edit.png">
+            </form>
+            <form method="post" action="./admin.php?page=article">
+                <input type="hidden" name="id" value="{$menu[i].id}" />
+                <input type="hidden" name="type" value="supprimer" />
+                <input type="image" src="../../img/delete.png">
+            </form>
+            <br />          
+        {/section}
+    </div>
+        <br>
+    <form method="post" action="./admin.php?page=article">
+        <input type="submit" name="type" value="ajouter">
+    </form> 
+{/block}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-01-26 09:03:49
+/* Smarty version 3.1.30, created on 2017-01-26 09:35:14
   from "C:\wamp64\www\PHP\24_Silicon\view\admin\trame.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5889bb7578c0c0_42494287',
+  'unifunc' => 'content_5889c2d282c344_55973342',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '71b06edebe9a3b1c14cbe2c84451d88690585200' => 
     array (
       0 => 'C:\\wamp64\\www\\PHP\\24_Silicon\\view\\admin\\trame.html',
-      1 => 1485421428,
+      1 => 1485423311,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5889bb7578c0c0_42494287 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5889c2d282c344_55973342 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -41,17 +41,17 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
             <div class="right">
                 <!--c'est ici que ça change en fonction de l'url-->
                 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_157655889bb7578c0c6_18642170', 'contenu');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_195675889c2d282c342_48506267', 'contenu');
 ?>
 
             </div>
             <div class="clear"></div>
-            <!--<a href="../../index.php">Retour au site</a>-->
+            <a href="../../index.php">Retour</a>
         </div>
 	</body>
 </html><?php }
 /* {block 'contenu'} */
-class Block_157655889bb7578c0c6_18642170 extends Smarty_Internal_Block
+class Block_195675889c2d282c342_48506267 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

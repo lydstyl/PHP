@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-01-27 14:13:12
+/* Smarty version 3.1.30, created on 2017-01-27 15:15:15
   from "C:\wamp64\www\PHP\25_integration_janv_2017\view\site\home.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_588b55783aa484_64233925',
+  'unifunc' => 'content_588b6403661986_76776727',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'accb5e05e9e2d50210e88fafaf2bcf9596b81997' => 
     array (
       0 => 'C:\\wamp64\\www\\PHP\\25_integration_janv_2017\\view\\site\\home.html',
-      1 => 1485526390,
+      1 => 1485530110,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_588b55783aa484_64233925 (Smarty_Internal_Template $_smarty_tpl) {
+function content_588b6403661986_76776727 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE HTML>
 <html lang="fr">
@@ -178,7 +178,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
                     </div>
                     <div class="columns medium-3">
                         <h4>CONTACT US</h4>
-                        <form>
+                        <form onsubmit='return false;'>
                             <div><input type="text" name="name" placeholder="Name"></div>
                             <div><input type="text" name="mail" placeholder="Email"></div>
                             <div><input type="text" name="subject" placeholder="Subject"></div>
@@ -201,6 +201,12 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
                 </div>
             </footer>
         </div>
+        <?php echo '<script'; ?>
+ src="../../../static/js/jquery.js" type="text/javascript"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ src="../../js/submit_msg.js" type="text/javascript"><?php echo '</script'; ?>
+>
 	</body>
 </html><?php }
 }

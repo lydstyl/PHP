@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-01-27 15:15:15
+/* Smarty version 3.1.30, created on 2017-01-27 15:44:01
   from "C:\wamp64\www\PHP\25_integration_janv_2017\view\site\home.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_588b6403661986_76776727',
+  'unifunc' => 'content_588b6ac1c4d381_06032878',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'accb5e05e9e2d50210e88fafaf2bcf9596b81997' => 
     array (
       0 => 'C:\\wamp64\\www\\PHP\\25_integration_janv_2017\\view\\site\\home.html',
-      1 => 1485530110,
+      1 => 1485531805,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_588b6403661986_76776727 (Smarty_Internal_Template $_smarty_tpl) {
+function content_588b6ac1c4d381_06032878 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE HTML>
 <html lang="fr">
@@ -147,12 +147,24 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
                     </div>
                     <div class="columns medium-3">
                         <h4>QUICK LINKS</h4>
-                        <ul>                            
-                            <li><a href="#">Lorem ipsum dolor sit</a></li>
-                            <li><a href="#">Lorem ipsum dolor sit</a></li>
-                            <li><a href="#">Lorem ipsum dolor sit</a></li>
-                            <li><a href="#">Lorem ipsum dolor sit</a></li>
-                            <li><a href="#">Lorem ipsum dolor sit</a></li>
+                        <ul>   
+                            <?php
+$__section_i_2_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
+$__section_i_2_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['link']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_2_total = $__section_i_2_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
+if ($__section_i_2_total != 0) {
+for ($__section_i_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_2_iteration <= $__section_i_2_total; $__section_i_2_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+?>  
+                                <li><a href="#"><?php echo $_smarty_tpl->tpl_vars['link']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['name'];?>
+</a></li>
+                            <?php
+}
+}
+if ($__section_i_2_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
+}
+?>
                         </ul>
                     </div>
                     <div class="columns medium-3">

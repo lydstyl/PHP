@@ -6,6 +6,7 @@
     switch ($_GET['page']) {
         case 'menu':
         case 'article':
+        case 'link':
             include('../../model/admin/'.$_GET['page'].'.php');
             break;
         default:

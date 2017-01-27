@@ -28,4 +28,14 @@
         ) );
     }
     $smarty->assign("article", $assignTableArticle);
+    //affichage liste link
+    $resultat = mysqli_query($link, 'SELECT * FROM `link` ORDER BY `position`, `name`');
+    $assignTable = [];
+    while($data = mysqli_fetch_assoc($resultat)){
+        array_push($assignTable,  array(
+            //'position' => $data['position'], // pas besoin de la position
+            'name'=> $data['name']
+        ) );
+    }
+    $smarty->assign("link", $assignTable);
     $smarty->display('../../view/site/home.html');

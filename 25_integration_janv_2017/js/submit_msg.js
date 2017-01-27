@@ -4,8 +4,6 @@ $(function(){
         var mail = $('[name*="mail"]').val();
         var subject = $('[name*="subject"]').val();
         var msg = $('[name*="msg"]').val();
-        // var user = event.target.value;
-        // var message = $('input:nth-child(1)').val();
         $.post({
             method:'POST',
             data:   {

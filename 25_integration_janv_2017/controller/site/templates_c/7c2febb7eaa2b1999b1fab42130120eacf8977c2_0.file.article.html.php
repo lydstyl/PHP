@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-01-27 12:23:40
+/* Smarty version 3.1.30, created on 2017-01-27 08:40:47
   from "C:\wamp64\www\PHP\25_integration_janv_2017\view\admin\article.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_588b3bcc11a088_76879014',
+  'unifunc' => 'content_588b078fe0e704_11767206',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'e9747232682146f0e483830c76c9a9739a778bee' => 
+    '7c2febb7eaa2b1999b1fab42130120eacf8977c2' => 
     array (
       0 => 'C:\\wamp64\\www\\PHP\\25_integration_janv_2017\\view\\admin\\article.html',
-      1 => 1485519818,
+      1 => 1485505197,
       2 => 'file',
     ),
   ),
@@ -21,18 +21,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./trame.html' => 1,
   ),
 ),false)) {
-function content_588b3bcc11a088_76879014 (Smarty_Internal_Template $_smarty_tpl) {
+function content_588b078fe0e704_11767206 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_24408588b3bcc116209_51721326', 'contenu');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1317588b078fe0e706_06447842', 'contenu');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:./trame.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'contenu'} */
-class Block_24408588b3bcc116209_51721326 extends Smarty_Internal_Block
+class Block_1317588b078fe0e706_06447842 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -56,8 +56,10 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                 image<input type="text" name="image" value="<?php echo $_smarty_tpl->tpl_vars['menu']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['image'];?>
 " />
                 <div>
-                    <textarea rows="3" cols="42" name="paragraphe"><?php echo $_smarty_tpl->tpl_vars['menu']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['paragraphe'];?>
-</textarea>
+                    <textarea rows="3" cols="42" name="paragraphe">
+                        <?php echo $_smarty_tpl->tpl_vars['menu']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['paragraphe'];?>
+
+                    </textarea>
                 </div>
 
                 <input type="image" src="../../img/edit.png">
